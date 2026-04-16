@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "ShiftGo — Log your shift, know your pay",
+    "description": "A shift and earnings tracker for hourly workers. Cafés, restaurants, couriers, shops, factories — see what your work is worth, clearly."
+  },
+  "nav": {
+    "how": "How it works",
+    "help": "Help",
+    "getApp": "Get the app",
+    "menu": "Menu"
+  },
+  "stores": {
+    "appStoreAria": "Download on the App Store",
+    "appStoreAlt": "App Store",
+    "playStoreAria": "Get it on Google Play",
+    "playStoreAlt": "Google Play"
+  },
+  "hero": {
+    "eyebrow": "Built for hourly workers",
+    "title": "Log your shift.\nKnow your pay.",
+    "subtitle": "ShiftGo records your hourly or fixed-rate shifts, calculates your pay automatically, and takes the surprise out of month-end."
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Three steps. Nothing more.",
+    "step1": {
+      "title": "Add your shift",
+      "body": "Start, end, break, rate. Morning, day, and evening quick templates are built in. Done in ten seconds."
+    },
+    "step2": {
+      "title": "Track it live",
+      "body": "While your shift is running, the Home screen shows a live earnings counter. Weekly and monthly totals, all at a glance."
+    },
+    "step3": {
+      "title": "Let the numbers talk",
+      "body": "A clean breakdown at month-end. Charts, total hours, overtime — crystal clear. Export to PDF when you need to."
+    }
+  },
+  "testimonials": {
+    "eyebrow": "What people say",
+    "title": "From the people using it.",
+    "items": {
+      "1": {
+        "title": "Payday isn't stressful anymore",
+        "body": "I used to dread the end of every month. This was the first month I actually knew what to expect, and it was such a relief.",
+        "name": "Maya R.",
+        "date": "March 2026"
+      },
+      "2": {
+        "title": "Finally, something that just works",
+        "body": "Simple, fast, does exactly what it says. I log my shift and that's it. Nothing extra, nothing in the way. Thank you.",
+        "name": "Jamal T.",
+        "date": "February 2026"
+      },
+      "3": {
+        "title": "Every shift worker should have this",
+        "body": "My partner can see my schedule without asking me every single day, and that alone is worth it. Our life got easier.",
+        "name": "Sarah O.",
+        "date": "January 2026"
+      }
+    }
+  },
+  "cta": {
+    "title": "Try ShiftGo this month.",
+    "body": "Log your shift. See your pay. Calm the end of the month down.",
+    "storeHint": "Available on the App Store and Google Play"
+  },
+  "footer": {
+    "tagline": "A calm, private way to track your shifts and earnings. Built for hourly workers.",
+    "sections": {
+      "product": "Company",
+      "contact": "Contact"
+    },
+    "legal": {
+      "help": "Help",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "imprint": "Imprint",
+      "cancel": "Cancel subscription"
+    },
+    "contactHint": "A real person reads every email. We usually reply within one working day.",
+    "copyright": "© 2026 BE ADS Yazılım Teknoloji San. ve Tic. Ltd. Şti. · Antalya, Türkiye",
+    "builtFor": "Made for shift workers everywhere."
+  },
+  "policy": {}
+}

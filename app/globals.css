@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand — exact from ShiftGo app */
+  --color-brand: #341657;
+  --color-brand-mid: #5a2d82;
+  --color-brand-end: #7b4ba3;
+  --color-brand-accent: #a589cf;
+  --color-brand-soft: #f4eeff;
+  --color-brand-soft-alt: #faf7ff;
+  --color-brand-stroke: #e8e0f1;
+
+  /* Surfaces */
+  --color-canvas: #f6f4fb;
+  --color-surface-subtle: #fcfbff;
+  --color-surface-raised: #ffffff;
+
+  /* Text */
+  --color-ink-primary: #17131f;
+  --color-ink-secondary: #686276;
+  --color-ink-muted: #a49fb0;
+
+  /* Strokes */
+  --color-stroke: #ece7f2;
+  --color-stroke-light: #e2e8f0;
+
+  /* Semantic */
+  --color-success: #10b981;
+  --color-success-soft: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-soft: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-soft: #fef2f2;
+  --color-info: #3b82f6;
+  --color-info-soft: #dbeafe;
+
+  /* Spacing (4pt, semantic — app scale + web section extensions) */
+  --spacing-2xs: 0.25rem; /* 4 */
+  --spacing-xs: 0.5rem;   /* 8 */
+  --spacing-sm: 0.75rem;  /* 12 */
+  --spacing-md: 1rem;     /* 16 */
+  --spacing-lg: 1.25rem;  /* 20 */
+  --spacing-xl: 1.5rem;   /* 24 */
+  --spacing-2xl: 2rem;    /* 32 */
+  --spacing-3xl: 3rem;    /* 48 */
+  --spacing-4xl: 4rem;    /* 64 */
+  --spacing-5xl: 6rem;    /* 96 */
+
+  /* Radius */
+  --radius-xxs: 6px;
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-md-plus: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-ink-primary);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-soft);
+    color: var(--color-brand);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+    color: var(--color-ink-primary);
+  }
+
+  h1 {
+    letter-spacing: -0.035em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .elev-1 {
+    box-shadow: 0 1px 2px #24143a14, 0 6px 18px -6px #24143a1a;
+  }
+
+  .elev-2 {
+    box-shadow: 0 1px 2px #24143a14, 0 12px 28px -8px #24143a26;
+  }
+
+  .elev-3 {
+    box-shadow: 0 2px 4px #24143a14, 0 20px 40px -12px #24143a33;
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(135deg, #5a2d82, #7b4ba3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
