@@ -11,16 +11,14 @@ import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
 import { SuccessPanel, MailIcon } from "./success-panel";
+import { useAuthQueryForward } from "./use-query-forward";
 
-export function ForgotPasswordForm({
-  redirectTo,
-}: {
-  redirectTo: string;
-}) {
+export function ForgotPasswordForm() {
   const t = useTranslations("auth.forgot");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const captchaRef = useRef<HCaptcha>(null);
+  const { redirectTo } = useAuthQueryForward();
 
   const [view, setView] = useState<"form" | "sent">("form");
   const [email, setEmail] = useState("");

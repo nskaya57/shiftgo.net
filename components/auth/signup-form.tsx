@@ -16,6 +16,7 @@ import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
 import { SuccessPanel, MailIcon } from "./success-panel";
+import { useAuthQueryForward } from "./use-query-forward";
 
 type FieldErrors = {
   email?: string;
@@ -27,17 +28,12 @@ type FieldErrors = {
 
 const RESEND_COOLDOWN_SECONDS = 60;
 
-export function SignupForm({
-  queryToForward,
-  redirectTo,
-}: {
-  queryToForward: string;
-  redirectTo: string;
-}) {
+export function SignupForm() {
   const t = useTranslations("auth.signUp");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const captchaRef = useRef<HCaptcha>(null);
+  const { redirectTo } = useAuthQueryForward();
 
   const [view, setView] = useState<"form" | "sent">("form");
   const [email, setEmail] = useState("");
@@ -171,8 +167,6 @@ export function SignupForm({
       </SuccessPanel>
     );
   }
-
-  void queryToForward; // unused but kept for parity with signin form API
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">

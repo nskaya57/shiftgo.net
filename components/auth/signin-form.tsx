@@ -16,6 +16,7 @@ import { PasswordField } from "./password-field";
 import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
+import { useAuthQueryForward } from "./use-query-forward";
 
 type FieldErrors = {
   email?: string;
@@ -23,16 +24,13 @@ type FieldErrors = {
   captcha?: string;
 };
 
-export function SignInForm({
-  queryToForward,
-}: {
-  queryToForward: string;
-}) {
+export function SignInForm() {
   const t = useTranslations("auth.signIn");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const router = useRouter();
   const captchaRef = useRef<HCaptcha>(null);
+  const { queryToForward } = useAuthQueryForward();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

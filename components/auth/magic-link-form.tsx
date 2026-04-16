@@ -11,18 +11,14 @@ import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
 import { SuccessPanel, MailIcon } from "./success-panel";
+import { useAuthQueryForward } from "./use-query-forward";
 
-export function MagicLinkForm({
-  redirectTo,
-  state,
-}: {
-  redirectTo: string;
-  state: string | null;
-}) {
+export function MagicLinkForm() {
   const t = useTranslations("auth.magicLink");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const captchaRef = useRef<HCaptcha>(null);
+  const { redirectTo, state } = useAuthQueryForward();
 
   const [view, setView] = useState<"form" | "sent">("form");
   const [email, setEmail] = useState("");
