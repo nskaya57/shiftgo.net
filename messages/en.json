@@ -105,45 +105,20 @@
     },
     "signIn": {
       "title": "Sign in to ShiftGo",
-      "subtitle": "Welcome back. Log in to sync your shifts across devices.",
-      "submit": "Sign in",
-      "forgot": "Forgot password?",
-      "magicLink": "Sign in with a magic link instead",
+      "subtitle": "Enter your email — we'll send you a sign-in link.",
+      "submit": "Send sign-in link",
       "noAccount": "Don't have an account?",
       "createAccount": "Create one"
     },
     "signUp": {
       "title": "Create your ShiftGo account",
-      "subtitle": "One account, all your shifts. Free to start.",
-      "submit": "Create account",
-      "passwordConfirm": "Confirm password",
+      "subtitle": "Enter your email to get started. We'll send a link to confirm.",
+      "submit": "Send sign-up link",
       "terms": "I agree to the {termsLink} and {privacyLink}.",
       "termsLink": "Terms of Service",
       "privacyLink": "Privacy Policy",
       "haveAccount": "Already have an account?",
-      "signInLink": "Sign in",
-      "verifySent": "Check your inbox",
-      "verifyBody": "We sent a confirmation link to {email}. Click it to finish creating your account.",
-      "verifyOpenMail": "Open your email app",
-      "verifyResend": "Didn't get the email?",
-      "verifyResendAction": "Resend",
-      "verifyResendCooldown": "You can resend in {seconds}s"
-    },
-    "magicLink": {
-      "title": "Sign in with email",
-      "subtitle": "We'll email you a one-time link. No password needed.",
-      "submit": "Email me a link",
-      "sent": "Check your inbox",
-      "sentBody": "A one-time sign-in link is on its way to {email}.",
-      "back": "Use a password instead"
-    },
-    "forgot": {
-      "title": "Reset your password",
-      "subtitle": "Enter your email and we'll send a reset link.",
-      "submit": "Send reset link",
-      "sent": "Check your inbox",
-      "sentBody": "We sent a password reset link to {email}. Click the link within 30 minutes to continue.",
-      "back": "Back to sign in"
+      "signInLink": "Sign in"
     },
     "resetPassword": {
       "title": "Set a new password",

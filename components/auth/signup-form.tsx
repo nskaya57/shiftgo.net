@@ -5,74 +5,49 @@ import { useTranslations } from "next-intl";
 import type HCaptcha from "@hcaptcha/react-hcaptcha";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import { sanitizeRedirect } from "@/lib/auth/redirect";
-import {
-  mapSupabaseError,
-  validateEmail,
-  validatePassword,
-} from "@/lib/auth/validation";
+import { mapSupabaseError, validateEmail } from "@/lib/auth/validation";
 import { TextField } from "./text-field";
-import { PasswordField } from "./password-field";
 import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
-import { SuccessPanel, MailIcon } from "./success-panel";
 import { useAuthQueryForward } from "./use-query-forward";
 
 type FieldErrors = {
   email?: string;
-  password?: string;
-  confirmPassword?: string;
   terms?: string;
   captcha?: string;
 };
-
-const RESEND_COOLDOWN_SECONDS = 60;
 
 export function SignupForm() {
   const t = useTranslations("auth.signUp");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const captchaRef = useRef<HCaptcha>(null);
-  const { redirectTo } = useAuthQueryForward();
+  const { redirectTo, state } = useAuthQueryForward();
 
-  const [view, setView] = useState<"form" | "sent">("form");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [resendCooldown, setResendCooldown] = useState(0);
 
-  function startCooldown() {
-    setResendCooldown(RESEND_COOLDOWN_SECONDS);
-    const interval = setInterval(() => {
-      setResendCooldown((prev) => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-  }
-
-  async function submitSignup(trimmedEmail: string) {
-    const supabase = getSupabaseBrowserClient();
-    const verifyRedirect = `${window.location.origin}/auth/verify`;
+  function redirectBackToApp(trimmedEmail: string) {
     const appRedirect = sanitizeRedirect(redirectTo);
-    const emailRedirectTo = `${verifyRedirect}?redirect_to=${encodeURIComponent(appRedirect)}`;
-
-    return supabase.auth.signUp({
-      email: trimmedEmail,
-      password,
-      options: {
-        emailRedirectTo,
-        captchaToken: captchaToken ?? undefined,
-      },
-    });
+    try {
+      const pendingUrl = new URL(appRedirect);
+      pendingUrl.searchParams.set("signup_pending", "1");
+      pendingUrl.searchParams.set("email", trimmedEmail);
+      if (state) pendingUrl.searchParams.set("state", state);
+      window.location.href = pendingUrl.toString();
+    } catch {
+      const params = new URLSearchParams({
+        signup_pending: "1",
+        email: trimmedEmail,
+      });
+      if (state) params.set("state", state);
+      window.location.href = `${appRedirect}?${params.toString()}`;
+    }
   }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -82,13 +57,6 @@ export function SignupForm() {
     const nextErrors: FieldErrors = {};
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
-
-    const passwordResult = validatePassword(password);
-    if (!passwordResult.ok) nextErrors.password = passwordResult.error;
-
-    if (!confirmPassword || confirmPassword !== password) {
-      nextErrors.confirmPassword = "passwordsDontMatch";
-    }
     if (!termsAccepted) nextErrors.terms = "termsRequired";
     if (isCaptchaRequired() && !captchaToken) {
       nextErrors.captcha = "captchaRequired";
@@ -99,73 +67,33 @@ export function SignupForm() {
 
     setSubmitting(true);
     try {
-      const { error } = await submitSignup(email.trim());
+      const trimmed = email.trim();
+      const supabase = getSupabaseBrowserClient();
+      const verifyRedirect = `${window.location.origin}/auth/verify`;
+      const appRedirect = sanitizeRedirect(redirectTo);
+      const emailRedirectTo = `${verifyRedirect}?redirect_to=${encodeURIComponent(appRedirect)}`;
+
+      const { error } = await supabase.auth.signInWithOtp({
+        email: trimmed,
+        options: {
+          emailRedirectTo,
+          shouldCreateUser: true,
+          captchaToken: captchaToken ?? undefined,
+        },
+      });
+
       if (error) {
         setFormError(tErrors(mapSupabaseError(error.code, error.message)));
         captchaRef.current?.resetCaptcha();
         setCaptchaToken(null);
         return;
       }
-      setView("sent");
-      startCooldown();
+      redirectBackToApp(trimmed);
     } catch (err) {
       console.error(err);
       setFormError(tErrors("network"));
-    } finally {
       setSubmitting(false);
     }
-  }
-
-  async function handleResend() {
-    if (resendCooldown > 0) return;
-    setSubmitting(true);
-    try {
-      const { error } = await submitSignup(email.trim());
-      if (error) {
-        setFormError(tErrors(mapSupabaseError(error.code, error.message)));
-        return;
-      }
-      startCooldown();
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  if (view === "sent") {
-    return (
-      <SuccessPanel
-        icon={<MailIcon />}
-        title={t("verifySent")}
-        footer={
-          <div className="space-y-3">
-            <p className="text-[13px] text-[#a49fb0]">
-              {t("verifyResend")}
-            </p>
-            {resendCooldown > 0 ? (
-              <p className="text-[13px] text-[#a49fb0]">
-                {t("verifyResendCooldown", { seconds: resendCooldown })}
-              </p>
-            ) : (
-              <button
-                type="button"
-                onClick={handleResend}
-                disabled={submitting}
-                className="text-[14px] font-semibold text-[#341657] hover:underline disabled:opacity-60"
-              >
-                {t("verifyResendAction")}
-              </button>
-            )}
-            {formError ? (
-              <p className="text-[13px] font-medium text-[#ef4444]" role="alert">
-                {formError}
-              </p>
-            ) : null}
-          </div>
-        }
-      >
-        {t("verifyBody", { email: email.trim() })}
-      </SuccessPanel>
-    );
   }
 
   return (
@@ -182,35 +110,6 @@ export function SignupForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         error={fieldErrors.email ? tErrors(fieldErrors.email) : null}
-        required
-      />
-
-      <PasswordField
-        label={tShared("password")}
-        name="new-password"
-        autoComplete="new-password"
-        showLabel={tShared("passwordShow")}
-        hideLabel={tShared("passwordHide")}
-        hint={tShared("passwordHint")}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        error={fieldErrors.password ? tErrors(fieldErrors.password) : null}
-        required
-      />
-
-      <PasswordField
-        label={t("passwordConfirm")}
-        name="confirm-password"
-        autoComplete="new-password"
-        showLabel={tShared("passwordShow")}
-        hideLabel={tShared("passwordHide")}
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        error={
-          fieldErrors.confirmPassword
-            ? tErrors(fieldErrors.confirmPassword)
-            : null
-        }
         required
       />
 

@@ -1,18 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import type HCaptcha from "@hcaptcha/react-hcaptcha";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
-import { handoffToApp } from "@/lib/auth/handoff";
-import {
-  mapSupabaseError,
-  validateEmail,
-  validatePassword,
-} from "@/lib/auth/validation";
+import { sanitizeRedirect } from "@/lib/auth/redirect";
+import { mapSupabaseError, validateEmail } from "@/lib/auth/validation";
 import { TextField } from "./text-field";
-import { PasswordField } from "./password-field";
 import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
@@ -20,24 +14,39 @@ import { useAuthQueryForward } from "./use-query-forward";
 
 type FieldErrors = {
   email?: string;
-  password?: string;
   captcha?: string;
 };
 
 export function SignInForm() {
-  const t = useTranslations("auth.signIn");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
-  const router = useRouter();
+  const t = useTranslations("auth.signIn");
   const captchaRef = useRef<HCaptcha>(null);
-  const { queryToForward } = useAuthQueryForward();
+  const { redirectTo, state } = useAuthQueryForward();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+
+  function redirectBackToApp(trimmedEmail: string) {
+    const appRedirect = sanitizeRedirect(redirectTo);
+    try {
+      const pendingUrl = new URL(appRedirect);
+      pendingUrl.searchParams.set("signup_pending", "1");
+      pendingUrl.searchParams.set("email", trimmedEmail);
+      if (state) pendingUrl.searchParams.set("state", state);
+      window.location.href = pendingUrl.toString();
+    } catch {
+      const params = new URLSearchParams({
+        signup_pending: "1",
+        email: trimmedEmail,
+      });
+      if (state) params.set("state", state);
+      window.location.href = `${appRedirect}?${params.toString()}`;
+    }
+  }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,8 +55,6 @@ export function SignInForm() {
     const nextErrors: FieldErrors = {};
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
-    if (!password) nextErrors.password = "passwordRequired";
-
     if (isCaptchaRequired() && !captchaToken) {
       nextErrors.captcha = "captchaRequired";
     }
@@ -57,11 +64,19 @@ export function SignInForm() {
 
     setSubmitting(true);
     try {
+      const trimmed = email.trim();
       const supabase = getSupabaseBrowserClient();
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
-        options: captchaToken ? { captchaToken } : undefined,
+      const verifyRedirect = `${window.location.origin}/auth/verify`;
+      const appRedirect = sanitizeRedirect(redirectTo);
+      const emailRedirectTo = `${verifyRedirect}?redirect_to=${encodeURIComponent(appRedirect)}`;
+
+      const { error } = await supabase.auth.signInWithOtp({
+        email: trimmed,
+        options: {
+          emailRedirectTo,
+          shouldCreateUser: true,
+          captchaToken: captchaToken ?? undefined,
+        },
       });
 
       if (error) {
@@ -70,19 +85,10 @@ export function SignInForm() {
         setCaptchaToken(null);
         return;
       }
-      if (!data.session) {
-        setFormError(tErrors("generic"));
-        return;
-      }
-
-      const result = handoffToApp(data.session);
-      if (result.status === "no-context") {
-        router.push(`/auth/callback?web=1`);
-      }
+      redirectBackToApp(trimmed);
     } catch (err) {
       console.error(err);
       setFormError(tErrors("network"));
-    } finally {
       setSubmitting(false);
     }
   }
@@ -104,27 +110,6 @@ export function SignInForm() {
         required
       />
 
-      <PasswordField
-        label={tShared("password")}
-        name="password"
-        autoComplete="current-password"
-        showLabel={tShared("passwordShow")}
-        hideLabel={tShared("passwordHide")}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        error={fieldErrors.password ? tErrors(fieldErrors.password) : null}
-        required
-      />
-
-      <div className="flex justify-end">
-        <a
-          href={`/auth/forgot${queryToForward}`}
-          className="text-[13px] font-semibold text-[#341657] hover:underline"
-        >
-          {t("forgot")}
-        </a>
-      </div>
-
       {isCaptchaRequired() ? (
         <div>
           <Captcha
@@ -144,29 +129,9 @@ export function SignInForm() {
         </div>
       ) : null}
 
-      <SubmitButton
-        loading={submitting}
-        loadingLabel={tShared("loading")}
-      >
+      <SubmitButton loading={submitting} loadingLabel={tShared("loading")}>
         {t("submit")}
       </SubmitButton>
-
-      <div className="relative py-2 text-center">
-        <span className="absolute inset-x-0 top-1/2 h-px bg-[#ece7f2]" aria-hidden="true" />
-        <span className="relative inline-block bg-white px-3 text-[12px] font-medium uppercase tracking-wider text-[#a49fb0]">
-          {tShared("orDivider")}
-        </span>
-      </div>
-
-      <a
-        href={`/auth/magic-link${queryToForward}`}
-        className="inline-flex w-full items-center justify-center rounded-full border border-[#e8e0f1] bg-white px-6 py-3 text-[14px] font-semibold text-[#17131f] transition-colors hover:border-[#341657] hover:text-[#341657]"
-      >
-        {t("magicLink")}
-      </a>
     </form>
   );
 }
-
-// Passes the validation fn (unused warning guard, referenced for eventual multi-step validation)
-void validatePassword;
