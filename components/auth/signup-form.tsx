@@ -23,7 +23,8 @@ export function SignupForm() {
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const captchaRef = useRef<HCaptcha>(null);
-  const { redirectTo, state } = useAuthQueryForward();
+  const { redirectTo, state, isAppEmbed } = useAuthQueryForward();
+  const captchaNeeded = isCaptchaRequired() && !isAppEmbed;
 
   const [email, setEmail] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -58,7 +59,7 @@ export function SignupForm() {
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
     if (!termsAccepted) nextErrors.terms = "termsRequired";
-    if (isCaptchaRequired() && !captchaToken) {
+    if (captchaNeeded && !captchaToken) {
       nextErrors.captcha = "captchaRequired";
     }
 
@@ -151,7 +152,7 @@ export function SignupForm() {
         </p>
       ) : null}
 
-      {isCaptchaRequired() ? (
+      {captchaNeeded ? (
         <div>
           <Captcha
             ref={captchaRef}

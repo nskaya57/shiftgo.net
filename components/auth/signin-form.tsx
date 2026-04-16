@@ -22,7 +22,8 @@ export function SignInForm() {
   const tErrors = useTranslations("auth.errors");
   const t = useTranslations("auth.signIn");
   const captchaRef = useRef<HCaptcha>(null);
-  const { redirectTo, state } = useAuthQueryForward();
+  const { redirectTo, state, isAppEmbed } = useAuthQueryForward();
+  const captchaNeeded = isCaptchaRequired() && !isAppEmbed;
 
   const [email, setEmail] = useState("");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -55,7 +56,7 @@ export function SignInForm() {
     const nextErrors: FieldErrors = {};
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
-    if (isCaptchaRequired() && !captchaToken) {
+    if (captchaNeeded && !captchaToken) {
       nextErrors.captcha = "captchaRequired";
     }
 
@@ -110,7 +111,7 @@ export function SignInForm() {
         required
       />
 
-      {isCaptchaRequired() ? (
+      {captchaNeeded ? (
         <div>
           <Captcha
             ref={captchaRef}

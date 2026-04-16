@@ -114,9 +114,7 @@
       "title": "Create your ShiftGo account",
       "subtitle": "Enter your email to get started. We'll send a link to confirm.",
       "submit": "Send sign-up link",
-      "terms": "I agree to the {termsLink} and {privacyLink}.",
-      "termsLink": "Terms of Service",
-      "privacyLink": "Privacy Policy",
+      "terms": "I agree to the <termsLink>Terms of Service</termsLink> and <privacyLink>Privacy Policy</privacyLink>.",
       "haveAccount": "Already have an account?",
       "signInLink": "Sign in"
     },

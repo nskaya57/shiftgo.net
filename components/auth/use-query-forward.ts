@@ -6,12 +6,15 @@ type ForwardContext = {
   queryToForward: string;
   redirectTo: string;
   state: string | null;
+  /** True when opened inside the mobile in-app WebView (?app=1). */
+  isAppEmbed: boolean;
 };
 
 const DEFAULT_CONTEXT: ForwardContext = {
   queryToForward: "",
   redirectTo: "shiftgoapp://auth/callback",
   state: null,
+  isAppEmbed: false,
 };
 
 function readFromLocation(): ForwardContext {
@@ -19,6 +22,7 @@ function readFromLocation(): ForwardContext {
   const search = new URLSearchParams(window.location.search);
   const redirectTo = search.get("redirect_to") ?? "";
   const state = search.get("state");
+  const isAppEmbed = search.get("app") === "1";
   const params = new URLSearchParams();
   if (redirectTo) params.set("redirect_to", redirectTo);
   if (state) params.set("state", state);
@@ -27,6 +31,7 @@ function readFromLocation(): ForwardContext {
     queryToForward: str ? `?${str}` : "",
     redirectTo: redirectTo || DEFAULT_CONTEXT.redirectTo,
     state,
+    isAppEmbed,
   };
 }
 
