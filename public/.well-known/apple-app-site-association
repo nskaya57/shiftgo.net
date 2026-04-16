@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["TEAM_ID_PLACEHOLDER.com.eneskaya57.ShiftGo"],
+        "components": [
+          { "/": "/auth/callback", "comment": "Auth deep-link handoff" },
+          { "/": "/auth/callback/*", "comment": "Auth deep-link handoff (sub)" },
+          { "/": "/auth/verify", "comment": "Email verification landing" },
+          { "/": "/auth/verify/*" },
+          { "/": "/auth/reset-password" },
+          { "/": "/auth/reset-password/*" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAM_ID_PLACEHOLDER.com.eneskaya57.ShiftGo"]
+  }
+}

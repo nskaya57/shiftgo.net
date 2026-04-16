@@ -82,5 +82,122 @@
     "copyright": "© 2026 BE ADS Yazılım Teknoloji San. ve Tic. Ltd. Şti. · Antalya, Türkiye",
     "builtFor": "Made for shift workers everywhere."
   },
-  "policy": {}
+  "policy": {},
+  "auth": {
+    "shared": {
+      "appName": "ShiftGo",
+      "back": "Back",
+      "backToSignIn": "Back to sign in",
+      "orDivider": "or",
+      "loading": "Working on it…",
+      "continue": "Continue",
+      "needHelp": "Need help?",
+      "contactSupport": "Contact support",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordHint": "At least 8 characters, with letters and numbers.",
+      "passwordShow": "Show password",
+      "passwordHide": "Hide password",
+      "passwordStrengthWeak": "Weak",
+      "passwordStrengthOkay": "Okay",
+      "passwordStrengthStrong": "Strong"
+    },
+    "signIn": {
+      "title": "Sign in to ShiftGo",
+      "subtitle": "Welcome back. Log in to sync your shifts across devices.",
+      "submit": "Sign in",
+      "forgot": "Forgot password?",
+      "magicLink": "Sign in with a magic link instead",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create one"
+    },
+    "signUp": {
+      "title": "Create your ShiftGo account",
+      "subtitle": "One account, all your shifts. Free to start.",
+      "submit": "Create account",
+      "passwordConfirm": "Confirm password",
+      "terms": "I agree to the {termsLink} and {privacyLink}.",
+      "termsLink": "Terms of Service",
+      "privacyLink": "Privacy Policy",
+      "haveAccount": "Already have an account?",
+      "signInLink": "Sign in",
+      "verifySent": "Check your inbox",
+      "verifyBody": "We sent a confirmation link to {email}. Click it to finish creating your account.",
+      "verifyOpenMail": "Open your email app",
+      "verifyResend": "Didn't get the email?",
+      "verifyResendAction": "Resend",
+      "verifyResendCooldown": "You can resend in {seconds}s"
+    },
+    "magicLink": {
+      "title": "Sign in with email",
+      "subtitle": "We'll email you a one-time link. No password needed.",
+      "submit": "Email me a link",
+      "sent": "Check your inbox",
+      "sentBody": "A one-time sign-in link is on its way to {email}.",
+      "back": "Use a password instead"
+    },
+    "forgot": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send a reset link.",
+      "submit": "Send reset link",
+      "sent": "Check your inbox",
+      "sentBody": "We sent a password reset link to {email}. Click the link within 30 minutes to continue.",
+      "back": "Back to sign in"
+    },
+    "resetPassword": {
+      "title": "Set a new password",
+      "subtitle": "Choose something new and memorable.",
+      "submit": "Save password",
+      "success": "All set",
+      "successBody": "Your password has been updated. Redirecting you to the app…",
+      "tokenInvalid": "This link has expired",
+      "tokenInvalidBody": "Password reset links are valid for 30 minutes. Please request a new one.",
+      "requestNew": "Request a new link"
+    },
+    "verify": {
+      "title": "Verifying your email…",
+      "success": "You're in",
+      "successBody": "Redirecting you to the app…",
+      "expired": "This link has expired",
+      "expiredBody": "Email confirmation links are valid for 24 hours. Please request a new one from the app.",
+      "failed": "Something went wrong",
+      "failedBody": "We couldn't verify this email. Please try again or contact support.",
+      "resend": "Resend verification"
+    },
+    "callback": {
+      "redirecting": "Opening ShiftGo…",
+      "redirectingBody": "If the app doesn't open automatically, tap the button below.",
+      "openInApp": "Open in the ShiftGo app",
+      "noApp": "Don't have the app yet?",
+      "download": "Download ShiftGo",
+      "desktopTitle": "Continue on your phone",
+      "desktopBody": "Open this link on the phone where you installed ShiftGo. You can also scan the QR code below."
+    },
+    "error": {
+      "title": "Authentication failed",
+      "genericBody": "Something went wrong while signing you in. Please try again.",
+      "invalidState": "This sign-in session has expired or is invalid. Please start over.",
+      "invalidRedirect": "The link you followed isn't allowed. For your safety, we stopped here.",
+      "tryAgain": "Try again",
+      "backHome": "Back to home"
+    },
+    "errors": {
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "That doesn't look like a valid email.",
+      "passwordRequired": "Please enter your password.",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "passwordNoLetterNumber": "Include at least one letter and one number.",
+      "passwordsDontMatch": "Passwords don't match.",
+      "termsRequired": "Please accept the terms to continue.",
+      "captchaRequired": "Please complete the CAPTCHA.",
+      "invalidCredentials": "Email or password is incorrect.",
+      "emailNotConfirmed": "Please confirm your email before signing in.",
+      "userAlreadyRegistered": "An account with this email already exists.",
+      "weakPassword": "This password is too weak. Try something longer.",
+      "rateLimit": "Too many attempts. Please try again in a few minutes.",
+      "network": "Connection problem. Please check your internet and retry.",
+      "generic": "Something went wrong. Please try again."
+    }
+  }
 }

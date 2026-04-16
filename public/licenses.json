@@ -1,0 +1,4395 @@
+{
+  "generatedAt": "2026-04-16T20:36:56.777Z",
+  "packageCount": 627,
+  "packages": [
+    {
+      "name": "@babel/code-frame",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/compat-data",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/core",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/generator",
+      "version": "7.29.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-annotate-as-pure",
+      "version": "7.27.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-compilation-targets",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-create-class-features-plugin",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-define-polyfill-provider",
+      "version": "0.6.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel-polyfills",
+      "publisher": null
+    },
+    {
+      "name": "@babel/helper-globals",
+      "version": "7.28.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-member-expression-to-functions",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-module-imports",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-module-transforms",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-optimise-call-expression",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-plugin-utils",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-remap-async-to-generator",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-replace-supers",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-skip-transparent-expression-wrappers",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-string-parser",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-validator-option",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helper-wrap-function",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/helpers",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/parser",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-proposal-decorators",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-proposal-export-default-from",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-async-generators",
+      "version": "7.8.4",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-generators",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-bigint",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-bigint",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-class-properties",
+      "version": "7.12.13",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-class-static-block",
+      "version": "7.14.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-decorators",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-dynamic-import",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-dynamic-import",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-export-default-from",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-flow",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-import-attributes",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-import-meta",
+      "version": "7.10.4",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-json-strings",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-json-strings",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-logical-assignment-operators",
+      "version": "7.10.4",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-nullish-coalescing-operator",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-nullish-coalescing-operator",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-numeric-separator",
+      "version": "7.10.4",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-object-rest-spread",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-optional-catch-binding",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-optional-catch-binding",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-optional-chaining",
+      "version": "7.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-optional-chaining",
+      "publisher": null
+    },
+    {
+      "name": "@babel/plugin-syntax-private-property-in-object",
+      "version": "7.14.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-top-level-await",
+      "version": "7.14.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-syntax-typescript",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-arrow-functions",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-async-generator-functions",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-async-to-generator",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-block-scoping",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-class-properties",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-class-static-block",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-classes",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-destructuring",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-export-namespace-from",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-flow-strip-types",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-function-name",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-logical-assignment-operators",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-modules-commonjs",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-named-capturing-groups-regex",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-nullish-coalescing-operator",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-numeric-separator",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-object-rest-spread",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-optional-catch-binding",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-optional-chaining",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-parameters",
+      "version": "7.27.7",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-private-methods",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-private-property-in-object",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-display-name",
+      "version": "7.28.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-jsx",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-jsx-development",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-jsx-self",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-jsx-source",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-react-pure-annotations",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-regenerator",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-runtime",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-shorthand-properties",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-spread",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-template-literals",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-typescript",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/plugin-transform-unicode-regex",
+      "version": "7.27.1",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/preset-react",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "version": "7.28.5",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/runtime",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/template",
+      "version": "7.28.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/traverse",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@babel/types",
+      "version": "7.29.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "publisher": "The Babel Team"
+    },
+    {
+      "name": "@egjs/hammerjs",
+      "version": "2.0.17",
+      "license": "MIT",
+      "repository": "https://github.com/naver/hammer.js",
+      "publisher": null
+    },
+    {
+      "name": "@expo-google-fonts/outfit",
+      "version": "0.4.3",
+      "license": "MIT AND OFL-1.1",
+      "repository": "https://github.com/expo/google-fonts",
+      "publisher": "Expo Team"
+    },
+    {
+      "name": "@expo-google-fonts/poppins",
+      "version": "0.4.1",
+      "license": "MIT AND OFL-1.1",
+      "repository": "https://github.com/expo/google-fonts",
+      "publisher": "Expo Team"
+    },
+    {
+      "name": "@expo/config",
+      "version": "12.0.13",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/config-plugins",
+      "version": "54.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/config-types",
+      "version": "54.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/devtools",
+      "version": "0.1.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/env",
+      "version": "2.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/fingerprint",
+      "version": "0.15.4",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "@expo/image-utils",
+      "version": "0.8.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/json-file",
+      "version": "10.0.12",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/metro",
+      "version": "54.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo-metro",
+      "publisher": "Expo"
+    },
+    {
+      "name": "@expo/metro-config",
+      "version": "54.0.14",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/metro-runtime",
+      "version": "6.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "@expo/plist",
+      "version": "0.4.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/prebuild-config",
+      "version": "54.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/schema-utils",
+      "version": "0.1.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "@expo/sdk-runtime-versions",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": null,
+      "publisher": "Expo"
+    },
+    {
+      "name": "@expo/spawn-async",
+      "version": "1.7.2",
+      "license": "MIT",
+      "repository": "https://github.com/expo/spawn-async",
+      "publisher": "Expo"
+    },
+    {
+      "name": "@expo/vector-icons",
+      "version": "15.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/expo/vector-icons",
+      "publisher": "Brent Vatne"
+    },
+    {
+      "name": "@gorhom/bottom-sheet",
+      "version": "5.2.8",
+      "license": "MIT",
+      "repository": "https://github.com/gorhom/react-native-bottom-sheet",
+      "publisher": "Mo Gorhom"
+    },
+    {
+      "name": "@gorhom/portal",
+      "version": "1.0.14",
+      "license": "MIT",
+      "repository": "https://github.com/gorhom/react-native-portal",
+      "publisher": "Mo Gorhom"
+    },
+    {
+      "name": "@ide/backoff",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/ide/backoff",
+      "publisher": "James Ide"
+    },
+    {
+      "name": "@isaacs/ttlcache",
+      "version": "1.4.1",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/ttlcache",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.1.0",
+      "license": "ISC",
+      "repository": "https://github.com/istanbuljs/load-nyc-config",
+      "publisher": null
+    },
+    {
+      "name": "@istanbuljs/schema",
+      "version": "0.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/istanbuljs/schema",
+      "publisher": "Corey Farrell"
+    },
+    {
+      "name": "@jest/create-cache-key-function",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jest/environment",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jest/fake-timers",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jest/schemas",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jest/transform",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jest/types",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "@jridgewell/gen-mapping",
+      "version": "0.3.13",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/sourcemaps",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@jridgewell/remapping",
+      "version": "2.3.5",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/sourcemaps",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/resolve-uri",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@jridgewell/source-map",
+      "version": "0.3.11",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/sourcemaps",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.5.5",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/sourcemaps",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "license": "MIT",
+      "repository": "https://github.com/jridgewell/sourcemaps",
+      "publisher": "Justin Ridgewell"
+    },
+    {
+      "name": "@marceloterreiro/flash-calendar",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "github.com/marceloprado/flash-calendar",
+      "publisher": "Marcelo Prado"
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/radix-ui/primitives",
+      "publisher": null
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/radix-ui/primitives",
+      "publisher": null
+    },
+    {
+      "name": "@react-native-community/slider",
+      "version": "5.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/callstack/react-native-slider",
+      "publisher": "react-native-community"
+    },
+    {
+      "name": "@react-native-google-signin/google-signin",
+      "version": "16.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/react-native-google-signin/google-signin",
+      "publisher": "Vojtech Novak"
+    },
+    {
+      "name": "@react-native/assets-registry",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/babel-plugin-codegen",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/babel-preset",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/codegen",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/community-cli-plugin",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/debugger-frontend",
+      "version": "0.81.5",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/dev-middleware",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/gradle-plugin",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/js-polyfills",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-native/normalize-colors",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/bottom-tabs",
+      "version": "7.14.0",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/core",
+      "version": "7.14.0",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/elements",
+      "version": "2.9.5",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/native",
+      "version": "7.1.28",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/native-stack",
+      "version": "7.13.0",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@react-navigation/routers",
+      "version": "7.5.3",
+      "license": "MIT",
+      "repository": "https://github.com/react-navigation/react-navigation",
+      "publisher": null
+    },
+    {
+      "name": "@sentry-internal/browser-utils",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry-internal/feedback",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry-internal/replay",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry-internal/replay-canvas",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/babel-plugin-component-annotate",
+      "version": "5.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript-bundler-plugins",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/browser",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/cli",
+      "version": "3.3.5",
+      "license": "FSL-1.1-MIT",
+      "repository": "https://github.com/getsentry/sentry-cli",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/cli-darwin",
+      "version": "3.3.5",
+      "license": "FSL-1.1-MIT",
+      "repository": "https://github.com/getsentry/sentry-cli",
+      "publisher": null
+    },
+    {
+      "name": "@sentry/core",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/react",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/react-native",
+      "version": "8.8.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-react-native",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@sentry/types",
+      "version": "10.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/getsentry/sentry-javascript",
+      "publisher": "Sentry"
+    },
+    {
+      "name": "@shopify/flash-list",
+      "version": "2.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/Shopify/flash-list",
+      "publisher": "shopify"
+    },
+    {
+      "name": "@shopify/react-native-skia",
+      "version": "2.2.12",
+      "license": "MIT",
+      "repository": "https://github.com/Shopify/react-native-skia",
+      "publisher": "Shopify Inc."
+    },
+    {
+      "name": "@sinclair/typebox",
+      "version": "0.27.10",
+      "license": "MIT",
+      "repository": "https://github.com/sinclairzx81/typebox-legacy",
+      "publisher": "sinclairzx81"
+    },
+    {
+      "name": "@sinonjs/commons",
+      "version": "3.0.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/sinonjs/commons",
+      "publisher": null
+    },
+    {
+      "name": "@sinonjs/fake-timers",
+      "version": "10.3.0",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/sinonjs/fake-timers",
+      "publisher": "Christian Johansen"
+    },
+    {
+      "name": "@supabase/auth-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@supabase/functions-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@supabase/postgrest-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@supabase/realtime-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@supabase/storage-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "version": "2.96.0",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/supabase-js",
+      "publisher": "Supabase"
+    },
+    {
+      "name": "@types/babel__core",
+      "version": "7.20.5",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/babel__generator",
+      "version": "7.27.0",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/babel__template",
+      "version": "7.4.4",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/babel__traverse",
+      "version": "7.28.0",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/graceful-fs",
+      "version": "4.1.9",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/hammerjs",
+      "version": "2.0.46",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "2.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/istanbul-lib-report",
+      "version": "3.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/istanbul-reports",
+      "version": "3.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/node",
+      "version": "25.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/phoenix",
+      "version": "1.6.7",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/react",
+      "version": "19.1.17",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/stack-utils",
+      "version": "2.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/ws",
+      "version": "8.18.1",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/yargs",
+      "version": "17.0.35",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@types/yargs-parser",
+      "version": "21.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "publisher": null
+    },
+    {
+      "name": "@ungap/structured-clone",
+      "version": "1.3.0",
+      "license": "ISC",
+      "repository": "https://github.com/ungap/structured-clone",
+      "publisher": "Andrea Giammarchi"
+    },
+    {
+      "name": "@webgpu/types",
+      "version": "0.1.21",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/gpuweb/types",
+      "publisher": null
+    },
+    {
+      "name": "@xmldom/xmldom",
+      "version": "0.8.11",
+      "license": "MIT",
+      "repository": "https://github.com/xmldom/xmldom",
+      "publisher": null
+    },
+    {
+      "name": "abort-controller",
+      "version": "3.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/mysticatea/abort-controller",
+      "publisher": "Toru Nagashima"
+    },
+    {
+      "name": "accepts",
+      "version": "1.3.8",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/accepts",
+      "publisher": null
+    },
+    {
+      "name": "acorn",
+      "version": "8.15.0",
+      "license": "MIT",
+      "repository": "https://github.com/acornjs/acorn",
+      "publisher": null
+    },
+    {
+      "name": "agent-base",
+      "version": "7.1.4",
+      "license": "MIT",
+      "repository": "https://github.com/TooTallNate/proxy-agents",
+      "publisher": "Nathan Rajlich"
+    },
+    {
+      "name": "ajv",
+      "version": "8.18.0",
+      "license": "MIT",
+      "repository": "https://github.com/ajv-validator/ajv",
+      "publisher": "Evgeny Poberezkin"
+    },
+    {
+      "name": "anser",
+      "version": "1.4.10",
+      "license": "MIT",
+      "repository": "https://github.com/IonicaBizau/anser",
+      "publisher": "Ionică Bizău"
+    },
+    {
+      "name": "ansi-regex",
+      "version": "5.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/ansi-regex",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "ansi-styles",
+      "version": "4.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/ansi-styles",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "any-promise",
+      "version": "1.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/kevinbeaty/any-promise",
+      "publisher": "Kevin Beaty"
+    },
+    {
+      "name": "anymatch",
+      "version": "3.1.3",
+      "license": "ISC",
+      "repository": "https://github.com/micromatch/anymatch",
+      "publisher": "Elan Shanker"
+    },
+    {
+      "name": "arg",
+      "version": "5.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/vercel/arg",
+      "publisher": "Josh Junon"
+    },
+    {
+      "name": "argparse",
+      "version": "1.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/nodeca/argparse",
+      "publisher": null
+    },
+    {
+      "name": "asap",
+      "version": "2.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/kriskowal/asap",
+      "publisher": null
+    },
+    {
+      "name": "assert",
+      "version": "2.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/browserify/commonjs-assert",
+      "publisher": null
+    },
+    {
+      "name": "available-typed-arrays",
+      "version": "1.0.7",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/available-typed-arrays",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "babel-jest",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-istanbul",
+      "version": "6.1.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/istanbuljs/babel-plugin-istanbul",
+      "publisher": "Thai Pangsakulyanont @dtinth"
+    },
+    {
+      "name": "babel-plugin-jest-hoist",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-polyfill-corejs2",
+      "version": "0.4.15",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel-polyfills",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-polyfill-corejs3",
+      "version": "0.13.0",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel-polyfills",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-polyfill-regenerator",
+      "version": "0.6.6",
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel-polyfills",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-react-compiler",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-react-native-web",
+      "version": "0.21.2",
+      "license": "MIT",
+      "repository": "https://github.com/necolas/react-native-web",
+      "publisher": "Nicolas Gallagher"
+    },
+    {
+      "name": "babel-plugin-syntax-hermes-parser",
+      "version": "0.29.1",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/hermes",
+      "publisher": null
+    },
+    {
+      "name": "babel-plugin-transform-flow-enums",
+      "version": "0.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/flow",
+      "publisher": null
+    },
+    {
+      "name": "babel-preset-current-node-syntax",
+      "version": "1.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/nicolo-ribaudo/babel-preset-current-node-syntax",
+      "publisher": "Nicolò Ribaudo"
+    },
+    {
+      "name": "babel-preset-expo",
+      "version": "54.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "Expo"
+    },
+    {
+      "name": "babel-preset-jest",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "badgin",
+      "version": "1.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/jaulz/badgin",
+      "publisher": "Julian Hundeloh"
+    },
+    {
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/juliangruber/balanced-match",
+      "publisher": "Julian Gruber"
+    },
+    {
+      "name": "base64-js",
+      "version": "1.5.1",
+      "license": "MIT",
+      "repository": "https://github.com/beatgammit/base64-js",
+      "publisher": "T. Jameson Little"
+    },
+    {
+      "name": "baseline-browser-mapping",
+      "version": "2.9.19",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/web-platform-dx/baseline-browser-mapping",
+      "publisher": null
+    },
+    {
+      "name": "big-integer",
+      "version": "1.6.52",
+      "license": "Unlicense",
+      "repository": "https://github.com/peterolson/BigInteger.js",
+      "publisher": "Peter Olson"
+    },
+    {
+      "name": "boolbase",
+      "version": "1.0.0",
+      "license": "ISC",
+      "repository": "https://github.com/fb55/boolbase",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "bplist-creator",
+      "version": "0.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/nearinfinity/node-bplist-creator",
+      "publisher": "Joe Ferner"
+    },
+    {
+      "name": "bplist-parser",
+      "version": "0.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/nearinfinity/node-bplist-parser",
+      "publisher": "Joe Ferner"
+    },
+    {
+      "name": "brace-expansion",
+      "version": "2.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/juliangruber/brace-expansion",
+      "publisher": "Julian Gruber"
+    },
+    {
+      "name": "braces",
+      "version": "3.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/micromatch/braces",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "browserslist",
+      "version": "4.28.1",
+      "license": "MIT",
+      "repository": "https://github.com/browserslist/browserslist",
+      "publisher": "Andrey Sitnik"
+    },
+    {
+      "name": "bser",
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/facebook/watchman",
+      "publisher": "Wez Furlong"
+    },
+    {
+      "name": "buffer",
+      "version": "5.7.1",
+      "license": "MIT",
+      "repository": "https://github.com/feross/buffer",
+      "publisher": "Feross Aboukhadijeh"
+    },
+    {
+      "name": "buffer-from",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/LinusU/buffer-from",
+      "publisher": null
+    },
+    {
+      "name": "call-bind",
+      "version": "1.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/call-bind",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/call-bind-apply-helpers",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "call-bound",
+      "version": "1.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/call-bound",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "camelcase",
+      "version": "6.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/camelcase",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "caniuse-lite",
+      "version": "1.0.30001770",
+      "license": "CC-BY-4.0",
+      "repository": "https://github.com/browserslist/caniuse-lite",
+      "publisher": "Ben Briggs"
+    },
+    {
+      "name": "canvaskit-wasm",
+      "version": "0.40.0",
+      "license": "BSD-3-Clause",
+      "repository": null,
+      "publisher": null
+    },
+    {
+      "name": "chalk",
+      "version": "4.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/chalk",
+      "publisher": null
+    },
+    {
+      "name": "chrome-launcher",
+      "version": "0.15.2",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/GoogleChrome/chrome-launcher",
+      "publisher": "The Chromium Authors"
+    },
+    {
+      "name": "chromium-edge-launcher",
+      "version": "0.2.0",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/cezaraugusto/chromium-edge-launcher",
+      "publisher": "Cezar Augusto"
+    },
+    {
+      "name": "ci-info",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/watson/ci-info",
+      "publisher": "Thomas Watson Steen"
+    },
+    {
+      "name": "client-only",
+      "version": "0.0.1",
+      "license": "MIT",
+      "repository": null,
+      "publisher": null
+    },
+    {
+      "name": "cliui",
+      "version": "8.0.1",
+      "license": "ISC",
+      "repository": "https://github.com/yargs/cliui",
+      "publisher": "Ben Coe"
+    },
+    {
+      "name": "color",
+      "version": "4.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/Qix-/color",
+      "publisher": null
+    },
+    {
+      "name": "color-convert",
+      "version": "2.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/Qix-/color-convert",
+      "publisher": "Heather Arthur"
+    },
+    {
+      "name": "color-name",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": "https://github.com/colorjs/color-name",
+      "publisher": "DY"
+    },
+    {
+      "name": "color-string",
+      "version": "1.9.1",
+      "license": "MIT",
+      "repository": "https://github.com/Qix-/color-string",
+      "publisher": "Heather Arthur"
+    },
+    {
+      "name": "commander",
+      "version": "7.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/tj/commander.js",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "connect",
+      "version": "3.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/senchalabs/connect",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "convert-source-map",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/thlorenz/convert-source-map",
+      "publisher": "Thorsten Lorenz"
+    },
+    {
+      "name": "core-js-compat",
+      "version": "3.48.0",
+      "license": "MIT",
+      "repository": "https://github.com/zloirock/core-js",
+      "publisher": "Denis Pushkarev"
+    },
+    {
+      "name": "cross-fetch",
+      "version": "3.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/lquixada/cross-fetch",
+      "publisher": "Leonardo Quixada"
+    },
+    {
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/moxystudio/node-cross-spawn",
+      "publisher": "André Cruz"
+    },
+    {
+      "name": "crypto-random-string",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/crypto-random-string",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "css-in-js-utils",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/robinweser/css-in-js-utils",
+      "publisher": "robinweser"
+    },
+    {
+      "name": "css-select",
+      "version": "5.2.2",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/css-select",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "css-tree",
+      "version": "1.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/csstree/csstree",
+      "publisher": "Roman Dvornov"
+    },
+    {
+      "name": "css-what",
+      "version": "6.2.2",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/css-what",
+      "publisher": "Felix Böhm"
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/frenic/csstype",
+      "publisher": "Fredrik Nicol"
+    },
+    {
+      "name": "date-fns",
+      "version": "4.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/date-fns/date-fns",
+      "publisher": null
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "license": "MIT",
+      "repository": "https://github.com/debug-js/debug",
+      "publisher": "Josh Junon"
+    },
+    {
+      "name": "decode-uri-component",
+      "version": "0.2.2",
+      "license": "MIT",
+      "repository": "https://github.com/SamVerschueren/decode-uri-component",
+      "publisher": "Sam Verschueren"
+    },
+    {
+      "name": "deepmerge",
+      "version": "4.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/TehShrike/deepmerge",
+      "publisher": null
+    },
+    {
+      "name": "define-data-property",
+      "version": "1.1.4",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/define-data-property",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "define-properties",
+      "version": "1.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/define-properties",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "depd",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/dougwilson/nodejs-depd",
+      "publisher": "Douglas Christopher Wilson"
+    },
+    {
+      "name": "destroy",
+      "version": "1.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/stream-utils/destroy",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/lovell/detect-libc",
+      "publisher": "Lovell Fuller"
+    },
+    {
+      "name": "dom-serializer",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/cheeriojs/dom-serializer",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "domelementtype",
+      "version": "2.3.0",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/domelementtype",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "domhandler",
+      "version": "5.0.3",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/domhandler",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "domutils",
+      "version": "3.2.2",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/domutils",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "dotenv",
+      "version": "16.4.7",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/motdotla/dotenv",
+      "publisher": null
+    },
+    {
+      "name": "dotenv-expand",
+      "version": "11.0.7",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/motdotla/dotenv-expand",
+      "publisher": "motdotla"
+    },
+    {
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/es-shims/dunder-proto",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "ee-first",
+      "version": "1.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/jonathanong/ee-first",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "electron-to-chromium",
+      "version": "1.5.286",
+      "license": "ISC",
+      "repository": "https://github.com/kilian/electron-to-chromium",
+      "publisher": "Kilian Valkhof"
+    },
+    {
+      "name": "emoji-regex",
+      "version": "8.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/emoji-regex",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "encodeurl",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/pillarjs/encodeurl",
+      "publisher": null
+    },
+    {
+      "name": "entities",
+      "version": "4.5.0",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/entities",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "error-stack-parser",
+      "version": "2.1.4",
+      "license": "MIT",
+      "repository": "https://github.com/stacktracejs/error-stack-parser",
+      "publisher": null
+    },
+    {
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/es-define-property",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "es-errors",
+      "version": "1.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/es-errors",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "es-object-atoms",
+      "version": "1.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/es-object-atoms",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "escalade",
+      "version": "3.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/lukeed/escalade",
+      "publisher": "Luke Edwards"
+    },
+    {
+      "name": "escape-html",
+      "version": "1.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/component/escape-html",
+      "publisher": null
+    },
+    {
+      "name": "escape-string-regexp",
+      "version": "4.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/escape-string-regexp",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "esprima",
+      "version": "4.0.1",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/jquery/esprima",
+      "publisher": "Ariya Hidayat"
+    },
+    {
+      "name": "etag",
+      "version": "1.8.1",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/etag",
+      "publisher": null
+    },
+    {
+      "name": "event-target-shim",
+      "version": "5.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/mysticatea/event-target-shim",
+      "publisher": "Toru Nagashima"
+    },
+    {
+      "name": "expo",
+      "version": "54.0.33",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "Expo"
+    },
+    {
+      "name": "expo-apple-authentication",
+      "version": "8.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-application",
+      "version": "7.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-asset",
+      "version": "12.0.12",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-constants",
+      "version": "18.0.13",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-contacts",
+      "version": "15.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-crypto",
+      "version": "15.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-dev-client",
+      "version": "6.0.20",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-dev-launcher",
+      "version": "6.0.20",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-dev-menu",
+      "version": "7.0.18",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-dev-menu-interface",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-device",
+      "version": "8.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-file-system",
+      "version": "19.0.21",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-font",
+      "version": "14.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-json-utils",
+      "version": "0.15.0",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-keep-awake",
+      "version": "15.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-linear-gradient",
+      "version": "15.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-linking",
+      "version": "8.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-localization",
+      "version": "17.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-manifests",
+      "version": "1.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-modules-autolinking",
+      "version": "3.0.24",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-modules-core",
+      "version": "3.0.29",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-notifications",
+      "version": "0.32.16",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-print",
+      "version": "15.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-router",
+      "version": "6.0.23",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-secure-store",
+      "version": "15.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-server",
+      "version": "1.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": null
+    },
+    {
+      "name": "expo-sharing",
+      "version": "14.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-splash-screen",
+      "version": "31.0.13",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-status-bar",
+      "version": "3.0.9",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-updates-interface",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "expo-web-browser",
+      "version": "15.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "publisher": "650 Industries, Inc."
+    },
+    {
+      "name": "exponential-backoff",
+      "version": "3.1.3",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/coveooss/exponential-backoff",
+      "publisher": "Sami Sayegh"
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/epoberezkin/fast-deep-equal",
+      "publisher": "Evgeny Poberezkin"
+    },
+    {
+      "name": "fast-json-stable-stringify",
+      "version": "2.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/epoberezkin/fast-json-stable-stringify",
+      "publisher": "James Halliday"
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.0",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/fastify/fast-uri",
+      "publisher": "Vincent Le Goff"
+    },
+    {
+      "name": "fb-watchman",
+      "version": "2.0.2",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/facebook/watchman",
+      "publisher": "Wez Furlong"
+    },
+    {
+      "name": "fbjs",
+      "version": "3.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/fbjs",
+      "publisher": null
+    },
+    {
+      "name": "fbjs-css-vars",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/fbjs",
+      "publisher": null
+    },
+    {
+      "name": "fill-range",
+      "version": "7.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/jonschlinkert/fill-range",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "filter-obj",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/filter-obj",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "finalhandler",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/pillarjs/finalhandler",
+      "publisher": "Douglas Christopher Wilson"
+    },
+    {
+      "name": "find-up",
+      "version": "4.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/find-up",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "flow-enums-runtime",
+      "version": "0.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/flow",
+      "publisher": null
+    },
+    {
+      "name": "fontfaceobserver",
+      "version": "2.3.0",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/bramstein/fontfaceobserver",
+      "publisher": "Bram Stein"
+    },
+    {
+      "name": "for-each",
+      "version": "0.3.5",
+      "license": "MIT",
+      "repository": "https://github.com/Raynos/for-each",
+      "publisher": "Raynos"
+    },
+    {
+      "name": "fresh",
+      "version": "0.5.2",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/fresh",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "fsevents",
+      "version": "2.3.3",
+      "license": "MIT",
+      "repository": "https://github.com/fsevents/fsevents",
+      "publisher": null
+    },
+    {
+      "name": "function-bind",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/Raynos/function-bind",
+      "publisher": "Raynos"
+    },
+    {
+      "name": "generator-function",
+      "version": "2.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/TimothyGu/generator-function",
+      "publisher": "Jordan Harbamd"
+    },
+    {
+      "name": "gensync",
+      "version": "1.0.0-beta.2",
+      "license": "MIT",
+      "repository": "https://github.com/loganfsmyth/gensync",
+      "publisher": "Logan Smyth"
+    },
+    {
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "license": "ISC",
+      "repository": "https://github.com/stefanpenner/get-caller-file",
+      "publisher": "Stefan Penner"
+    },
+    {
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/get-intrinsic",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "get-package-type",
+      "version": "0.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/cfware/get-package-type",
+      "publisher": "Corey Farrell"
+    },
+    {
+      "name": "get-proto",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/get-proto",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "getenv",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/ctavan/node-getenv",
+      "publisher": "Christoph Tavan"
+    },
+    {
+      "name": "gifted-charts-core",
+      "version": "0.1.80",
+      "license": "MIT",
+      "repository": "https://github.com/Abhinandan-Kushwaha/gifted-charts-core",
+      "publisher": "Abhinandan Kushwaha"
+    },
+    {
+      "name": "glob",
+      "version": "13.0.4",
+      "license": "BlueOak-1.0.0",
+      "repository": "https://github.com/isaacs/node-glob",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "global-dirs",
+      "version": "0.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/global-dirs",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "gopd",
+      "version": "1.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/gopd",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/node-graceful-fs",
+      "publisher": null
+    },
+    {
+      "name": "has-flag",
+      "version": "4.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/has-flag",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "has-property-descriptors",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/has-property-descriptors",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/has-symbols",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "has-tostringtag",
+      "version": "1.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/has-tostringtag",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "hasown",
+      "version": "2.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/hasOwn",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "hermes-estree",
+      "version": "0.29.1",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/hermes",
+      "publisher": null
+    },
+    {
+      "name": "hermes-parser",
+      "version": "0.29.1",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/hermes",
+      "publisher": null
+    },
+    {
+      "name": "hoist-non-react-statics",
+      "version": "3.3.2",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/mridgway/hoist-non-react-statics",
+      "publisher": "Michael Ridgway"
+    },
+    {
+      "name": "html-parse-stringify",
+      "version": "3.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/henrikjoreteg/html-parse-stringify",
+      "publisher": "Henrik Joreteg"
+    },
+    {
+      "name": "http-errors",
+      "version": "2.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/http-errors",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "https-proxy-agent",
+      "version": "7.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/TooTallNate/proxy-agents",
+      "publisher": "Nathan Rajlich"
+    },
+    {
+      "name": "hyphenate-style-name",
+      "version": "1.1.0",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/rexxars/hyphenate-style-name",
+      "publisher": "Espen Hovlandsdal"
+    },
+    {
+      "name": "i18next",
+      "version": "25.8.10",
+      "license": "MIT",
+      "repository": "https://github.com/i18next/i18next",
+      "publisher": "Jan Mühlemann"
+    },
+    {
+      "name": "iceberg-js",
+      "version": "0.8.1",
+      "license": "MIT",
+      "repository": "https://github.com/supabase/iceberg-js",
+      "publisher": "mandarini"
+    },
+    {
+      "name": "ieee754",
+      "version": "1.2.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/feross/ieee754",
+      "publisher": "Feross Aboukhadijeh"
+    },
+    {
+      "name": "ignore",
+      "version": "5.3.2",
+      "license": "MIT",
+      "repository": "https://github.com/kaelzhang/node-ignore",
+      "publisher": "kael"
+    },
+    {
+      "name": "image-size",
+      "version": "1.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/image-size/image-size",
+      "publisher": "netroy"
+    },
+    {
+      "name": "imurmurhash",
+      "version": "0.1.4",
+      "license": "MIT",
+      "repository": "https://github.com/jensyt/imurmurhash-js",
+      "publisher": "Jens Taylor"
+    },
+    {
+      "name": "inherits",
+      "version": "2.0.4",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/inherits",
+      "publisher": null
+    },
+    {
+      "name": "ini",
+      "version": "1.3.8",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/ini",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "inline-style-prefixer",
+      "version": "7.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/robinweser/inline-style-prefixer",
+      "publisher": "Robin Weser"
+    },
+    {
+      "name": "invariant",
+      "version": "2.2.4",
+      "license": "MIT",
+      "repository": "https://github.com/zertosh/invariant",
+      "publisher": "Andres Suarez"
+    },
+    {
+      "name": "is-arguments",
+      "version": "1.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-arguments",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-arrayish",
+      "version": "0.3.4",
+      "license": "MIT",
+      "repository": "https://github.com/qix-/node-is-arrayish",
+      "publisher": "Qix"
+    },
+    {
+      "name": "is-callable",
+      "version": "1.2.7",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-callable",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-core-module",
+      "version": "2.16.1",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-core-module",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-docker",
+      "version": "2.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/is-docker",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/is-fullwidth-code-point",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "is-generator-function",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-generator-function",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-nan",
+      "version": "1.3.2",
+      "license": "MIT",
+      "repository": "https://github.com/es-shims/is-nan",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-number",
+      "version": "7.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/jonschlinkert/is-number",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "is-regex",
+      "version": "1.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-regex",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-typed-array",
+      "version": "1.1.15",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/is-typed-array",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "is-wsl",
+      "version": "2.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/is-wsl",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "isexe",
+      "version": "2.0.0",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/isexe",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "istanbul-lib-coverage",
+      "version": "3.2.2",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/istanbuljs/istanbuljs",
+      "publisher": "Krishnan Anantheswaran"
+    },
+    {
+      "name": "istanbul-lib-instrument",
+      "version": "5.2.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/istanbuljs/istanbuljs",
+      "publisher": "Krishnan Anantheswaran"
+    },
+    {
+      "name": "jest-environment-node",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-get-type",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-haste-map",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-message-util",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-mock",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-regex-util",
+      "version": "29.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-util",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-validate",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jest-worker",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": null
+    },
+    {
+      "name": "jimp-compact",
+      "version": "0.16.1",
+      "license": "MIT",
+      "repository": "https://github.com/nuxt-community/jimp-compact",
+      "publisher": null
+    },
+    {
+      "name": "js-tokens",
+      "version": "4.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/lydell/js-tokens",
+      "publisher": "Simon Lydell"
+    },
+    {
+      "name": "js-yaml",
+      "version": "3.14.2",
+      "license": "MIT",
+      "repository": "https://github.com/nodeca/js-yaml",
+      "publisher": "Vladimir Zapparov"
+    },
+    {
+      "name": "jsc-safe-url",
+      "version": "0.2.4",
+      "license": "0BSD",
+      "repository": "https://github.com/robhogan/jsc-safe-url",
+      "publisher": "Rob Hogan"
+    },
+    {
+      "name": "jsesc",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/jsesc",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/epoberezkin/json-schema-traverse",
+      "publisher": "Evgeny Poberezkin"
+    },
+    {
+      "name": "json5",
+      "version": "2.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/json5/json5",
+      "publisher": "Aseem Kishore"
+    },
+    {
+      "name": "leven",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/leven",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "lighthouse-logger",
+      "version": "1.4.2",
+      "license": "Apache-2.0",
+      "repository": null,
+      "publisher": null
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.31.1",
+      "license": "MPL-2.0",
+      "repository": "https://github.com/parcel-bundler/lightningcss",
+      "publisher": null
+    },
+    {
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.31.1",
+      "license": "MPL-2.0",
+      "repository": "https://github.com/parcel-bundler/lightningcss",
+      "publisher": null
+    },
+    {
+      "name": "lines-and-columns",
+      "version": "1.2.4",
+      "license": "MIT",
+      "repository": "https://github.com/eventualbuddha/lines-and-columns",
+      "publisher": "Brian Donovan"
+    },
+    {
+      "name": "locate-path",
+      "version": "5.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/locate-path",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "lodash",
+      "version": "4.17.23",
+      "license": "MIT",
+      "repository": "https://github.com/lodash/lodash",
+      "publisher": "John-David Dalton"
+    },
+    {
+      "name": "lodash.debounce",
+      "version": "4.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/lodash/lodash",
+      "publisher": "John-David Dalton"
+    },
+    {
+      "name": "lodash.throttle",
+      "version": "4.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/lodash/lodash",
+      "publisher": "John-David Dalton"
+    },
+    {
+      "name": "loose-envify",
+      "version": "1.4.0",
+      "license": "MIT",
+      "repository": "https://github.com/zertosh/loose-envify",
+      "publisher": "Andres Suarez"
+    },
+    {
+      "name": "lru-cache",
+      "version": "5.1.1",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/node-lru-cache",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "lucide-react-native",
+      "version": "0.574.0",
+      "license": "ISC",
+      "repository": "https://github.com/lucide-icons/lucide",
+      "publisher": "Eric Fennis"
+    },
+    {
+      "name": "makeerror",
+      "version": "1.0.12",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/daaku/nodejs-makeerror",
+      "publisher": "Naitik Shah"
+    },
+    {
+      "name": "marky",
+      "version": "1.3.0",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/nolanlawson/marky",
+      "publisher": "Nolan Lawson"
+    },
+    {
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/es-shims/math-intrinsics",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "mdn-data",
+      "version": "2.0.14",
+      "license": "CC0-1.0",
+      "repository": "https://github.com/mdn/data",
+      "publisher": "Mozilla Developer Network"
+    },
+    {
+      "name": "memoize-one",
+      "version": "5.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/alexreardon/memoize-one",
+      "publisher": "Alex Reardon"
+    },
+    {
+      "name": "merge-stream",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/grncdr/merge-stream",
+      "publisher": "Stephen Sugden"
+    },
+    {
+      "name": "metro",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-babel-transformer",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-cache",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-cache-key",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-config",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-core",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-file-map",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-minify-terser",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-resolver",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-runtime",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-source-map",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-symbolicate",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-transform-plugins",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "metro-transform-worker",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "micromatch",
+      "version": "4.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/micromatch/micromatch",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "mime",
+      "version": "1.6.0",
+      "license": "MIT",
+      "repository": "https://github.com/broofa/node-mime",
+      "publisher": "Robert Kieffer"
+    },
+    {
+      "name": "mime-db",
+      "version": "1.52.0",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/mime-db",
+      "publisher": null
+    },
+    {
+      "name": "mime-types",
+      "version": "2.1.35",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/mime-types",
+      "publisher": null
+    },
+    {
+      "name": "minimatch",
+      "version": "9.0.5",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/minimatch",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "minipass",
+      "version": "7.1.2",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/minipass",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "mitt",
+      "version": "3.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/developit/mitt",
+      "publisher": null
+    },
+    {
+      "name": "mkdirp",
+      "version": "1.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/isaacs/node-mkdirp",
+      "publisher": null
+    },
+    {
+      "name": "moment",
+      "version": "2.30.1",
+      "license": "MIT",
+      "repository": "https://github.com/moment/moment",
+      "publisher": "Iskren Ivov Chernev"
+    },
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/vercel/ms",
+      "publisher": null
+    },
+    {
+      "name": "mz",
+      "version": "2.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/normalize/mz",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.11",
+      "license": "MIT",
+      "repository": "https://github.com/ai/nanoid",
+      "publisher": "Andrey Sitnik"
+    },
+    {
+      "name": "negotiator",
+      "version": "0.6.3",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/negotiator",
+      "publisher": null
+    },
+    {
+      "name": "node-fetch",
+      "version": "2.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/bitinn/node-fetch",
+      "publisher": "David Frank"
+    },
+    {
+      "name": "node-int64",
+      "version": "0.4.0",
+      "license": "MIT",
+      "repository": "https://github.com/broofa/node-int64",
+      "publisher": "Robert Kieffer"
+    },
+    {
+      "name": "node-releases",
+      "version": "2.0.27",
+      "license": "MIT",
+      "repository": "https://github.com/chicoxyzzy/node-releases",
+      "publisher": "Sergey Rubanov"
+    },
+    {
+      "name": "normalize-path",
+      "version": "3.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/jonschlinkert/normalize-path",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "nth-check",
+      "version": "2.1.1",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/fb55/nth-check",
+      "publisher": "Felix Boehm"
+    },
+    {
+      "name": "nullthrows",
+      "version": "1.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/zertosh/nullthrows",
+      "publisher": "Andres Suarez"
+    },
+    {
+      "name": "ob1",
+      "version": "0.83.3",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/metro",
+      "publisher": null
+    },
+    {
+      "name": "object-assign",
+      "version": "4.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/object-assign",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "object-is",
+      "version": "1.1.6",
+      "license": "MIT",
+      "repository": "https://github.com/es-shims/object-is",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "object-keys",
+      "version": "1.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/object-keys",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "object.assign",
+      "version": "4.1.7",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/object.assign",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "on-finished",
+      "version": "2.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/on-finished",
+      "publisher": null
+    },
+    {
+      "name": "open",
+      "version": "7.4.2",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/open",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "p-limit",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/p-limit",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "p-locate",
+      "version": "4.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/p-locate",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "parse-png",
+      "version": "2.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/kevva/parse-png",
+      "publisher": "Kevin Martensson"
+    },
+    {
+      "name": "parseurl",
+      "version": "1.3.3",
+      "license": "MIT",
+      "repository": "https://github.com/pillarjs/parseurl",
+      "publisher": null
+    },
+    {
+      "name": "path-exists",
+      "version": "4.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/path-exists",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "path-key",
+      "version": "3.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/path-key",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "path-parse",
+      "version": "1.0.7",
+      "license": "MIT",
+      "repository": "https://github.com/jbgutierrez/path-parse",
+      "publisher": "Javier Blanco"
+    },
+    {
+      "name": "path-scurry",
+      "version": "2.0.1",
+      "license": "BlueOak-1.0.0",
+      "repository": "https://github.com/isaacs/path-scurry",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "repository": "https://github.com/alexeyraspopov/picocolors",
+      "publisher": "Alexey Raspopov"
+    },
+    {
+      "name": "picomatch",
+      "version": "2.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/micromatch/picomatch",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "pirates",
+      "version": "4.0.7",
+      "license": "MIT",
+      "repository": "https://github.com/danez/pirates",
+      "publisher": "Ari Porad"
+    },
+    {
+      "name": "plist",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/TooTallNate/node-plist",
+      "publisher": "Nathan Rajlich"
+    },
+    {
+      "name": "pngjs",
+      "version": "3.4.0",
+      "license": "MIT",
+      "repository": "https://github.com/lukeapage/pngjs2",
+      "publisher": null
+    },
+    {
+      "name": "possible-typed-array-names",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/possible-typed-array-names",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "postcss",
+      "version": "8.4.49",
+      "license": "MIT",
+      "repository": "https://github.com/postcss/postcss",
+      "publisher": "Andrey Sitnik"
+    },
+    {
+      "name": "postcss-value-parser",
+      "version": "4.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/TrySound/postcss-value-parser",
+      "publisher": "Bogdan Chadkin"
+    },
+    {
+      "name": "pretty-format",
+      "version": "29.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/jestjs/jest",
+      "publisher": "James Kyle"
+    },
+    {
+      "name": "progress",
+      "version": "2.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/visionmedia/node-progress",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "promise",
+      "version": "8.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/then/promise",
+      "publisher": "ForbesLindesay"
+    },
+    {
+      "name": "prop-types",
+      "version": "15.8.1",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/prop-types",
+      "publisher": null
+    },
+    {
+      "name": "proxy-from-env",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/Rob--W/proxy-from-env",
+      "publisher": "Rob Wu"
+    },
+    {
+      "name": "punycode",
+      "version": "2.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/punycode.js",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "query-string",
+      "version": "7.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/query-string",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "queue",
+      "version": "6.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/jessetane/queue",
+      "publisher": "Jesse Tane"
+    },
+    {
+      "name": "range-parser",
+      "version": "1.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/range-parser",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "react",
+      "version": "19.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "react-devtools-core",
+      "version": "6.1.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "react-dom",
+      "version": "19.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "react-fast-compare",
+      "version": "3.2.2",
+      "license": "MIT",
+      "repository": "https://github.com/FormidableLabs/react-fast-compare",
+      "publisher": "Chris Bolin"
+    },
+    {
+      "name": "react-freeze",
+      "version": "1.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-freeze",
+      "publisher": null
+    },
+    {
+      "name": "react-i18next",
+      "version": "16.5.4",
+      "license": "MIT",
+      "repository": "https://github.com/i18next/react-i18next",
+      "publisher": "Jan Mühlemann"
+    },
+    {
+      "name": "react-is",
+      "version": "19.2.4",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "react-native",
+      "version": "0.81.5",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react-native",
+      "publisher": null
+    },
+    {
+      "name": "react-native-calendar-events",
+      "version": "2.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/wmcmahan/react-native-calendar-events",
+      "publisher": "Will McMahan"
+    },
+    {
+      "name": "react-native-calendars",
+      "version": "1.1314.0",
+      "license": "MIT",
+      "repository": "https://github.com/wix/react-native-calendars",
+      "publisher": "Wix.com"
+    },
+    {
+      "name": "react-native-gesture-handler",
+      "version": "2.28.0",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-native-gesture-handler",
+      "publisher": "Krzysztof Magiera"
+    },
+    {
+      "name": "react-native-gifted-charts",
+      "version": "1.4.76",
+      "license": "MIT",
+      "repository": "https://github.com/Abhinandan-Kushwaha/react-native-gifted-charts",
+      "publisher": "Abhinandan Kushwaha"
+    },
+    {
+      "name": "react-native-is-edge-to-edge",
+      "version": "1.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/zoontek/react-native-edge-to-edge",
+      "publisher": "Mathieu Acthernoene"
+    },
+    {
+      "name": "react-native-mmkv",
+      "version": "4.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/mrousavy/react-native-mmkv",
+      "publisher": "Marc Rousavy"
+    },
+    {
+      "name": "react-native-nitro-modules",
+      "version": "0.33.9",
+      "license": "MIT",
+      "repository": "https://github.com/mrousavy/nitro",
+      "publisher": "Marc Rousavy"
+    },
+    {
+      "name": "react-native-reanimated",
+      "version": "4.1.6",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-native-reanimated",
+      "publisher": "Krzysztof Magiera"
+    },
+    {
+      "name": "react-native-safe-area-context",
+      "version": "5.6.2",
+      "license": "MIT",
+      "repository": "https://github.com/AppAndFlow/react-native-safe-area-context",
+      "publisher": "Janic Duplessis"
+    },
+    {
+      "name": "react-native-screens",
+      "version": "4.16.0",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-native-screens",
+      "publisher": "Krzysztof Magiera"
+    },
+    {
+      "name": "react-native-svg",
+      "version": "15.12.1",
+      "license": "MIT",
+      "repository": "https://github.com/react-native-community/react-native-svg",
+      "publisher": null
+    },
+    {
+      "name": "react-native-swipe-gestures",
+      "version": "1.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/glepur/react-native-swipe-gestures",
+      "publisher": "Goran Lepur"
+    },
+    {
+      "name": "react-native-toast-message",
+      "version": "2.3.3",
+      "license": "MIT",
+      "repository": "https://github.com/calintamas/react-native-toast-message",
+      "publisher": "Calin Tamas"
+    },
+    {
+      "name": "react-native-web",
+      "version": "0.21.2",
+      "license": "MIT",
+      "repository": "https://github.com/necolas/react-native-web",
+      "publisher": "Nicolas Gallagher"
+    },
+    {
+      "name": "react-native-worklets",
+      "version": "0.5.1",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-native-reanimated",
+      "publisher": null
+    },
+    {
+      "name": "react-reconciler",
+      "version": "0.31.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "react-refresh",
+      "version": "0.14.2",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "recyclerlistview",
+      "version": "4.2.3",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/Flipkart/recyclerlistview",
+      "publisher": "naqvitalha"
+    },
+    {
+      "name": "regenerate",
+      "version": "1.4.2",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/regenerate",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "regenerate-unicode-properties",
+      "version": "10.2.2",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/regenerate-unicode-properties",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "regenerator-runtime",
+      "version": "0.13.11",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/regenerator/tree/main/packages/runtime",
+      "publisher": "Ben Newman"
+    },
+    {
+      "name": "regexpu-core",
+      "version": "6.4.0",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/regexpu-core",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "regjsgen",
+      "version": "0.8.0",
+      "license": "MIT",
+      "repository": "https://github.com/bnjmnt4n/regjsgen",
+      "publisher": "Benjamin Tan"
+    },
+    {
+      "name": "regjsparser",
+      "version": "0.13.0",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/jviereck/regjsparser",
+      "publisher": "'Julian Viereck'"
+    },
+    {
+      "name": "require-directory",
+      "version": "2.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/troygoode/node-require-directory",
+      "publisher": "Troy Goode"
+    },
+    {
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/floatdrop/require-from-string",
+      "publisher": "Vsevolod Strukchinsky"
+    },
+    {
+      "name": "resolve",
+      "version": "1.22.11",
+      "license": "MIT",
+      "repository": "https://github.com/browserify/resolve",
+      "publisher": "James Halliday"
+    },
+    {
+      "name": "resolve-from",
+      "version": "5.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/resolve-from",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "resolve-global",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/resolve-global",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "resolve-workspace-root",
+      "version": "2.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/byCedric/resolve-workspace-root",
+      "publisher": "Cedric van Putten"
+    },
+    {
+      "name": "rimraf",
+      "version": "3.0.2",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/rimraf",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "rtl-detect",
+      "version": "1.1.2",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/shadiabuhilal/rtl-detect",
+      "publisher": "Shadi Abu Hilal"
+    },
+    {
+      "name": "safe-regex-test",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/safe-regex-test",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "sax",
+      "version": "1.4.4",
+      "license": "BlueOak-1.0.0",
+      "repository": "https://github.com/isaacs/sax-js",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "scheduler",
+      "version": "0.26.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "semver",
+      "version": "6.3.1",
+      "license": "ISC",
+      "repository": "https://github.com/npm/node-semver",
+      "publisher": "GitHub Inc."
+    },
+    {
+      "name": "send",
+      "version": "0.19.2",
+      "license": "MIT",
+      "repository": "https://github.com/pillarjs/send",
+      "publisher": "TJ Holowaychuk"
+    },
+    {
+      "name": "serialize-error",
+      "version": "2.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/serialize-error",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "serve-static",
+      "version": "1.16.3",
+      "license": "MIT",
+      "repository": "https://github.com/expressjs/serve-static",
+      "publisher": "Douglas Christopher Wilson"
+    },
+    {
+      "name": "server-only",
+      "version": "0.0.1",
+      "license": "MIT",
+      "repository": null,
+      "publisher": null
+    },
+    {
+      "name": "set-function-length",
+      "version": "1.2.2",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/set-function-length",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "setimmediate",
+      "version": "1.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/YuzuJS/setImmediate",
+      "publisher": "YuzuJS"
+    },
+    {
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "license": "ISC",
+      "repository": "https://github.com/wesleytodd/setprototypeof",
+      "publisher": "Wes Todd"
+    },
+    {
+      "name": "sf-symbols-typescript",
+      "version": "2.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/nandorojo/typescript-sf-symbols",
+      "publisher": "Fernando Rojo"
+    },
+    {
+      "name": "shallowequal",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/dashed/shallowequal",
+      "publisher": "Alberto Leal"
+    },
+    {
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/kevva/shebang-command",
+      "publisher": "Kevin Mårtensson"
+    },
+    {
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/shebang-regex",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "shell-quote",
+      "version": "1.8.3",
+      "license": "MIT",
+      "repository": "https://github.com/ljharb/shell-quote",
+      "publisher": "James Halliday"
+    },
+    {
+      "name": "shiftgo",
+      "version": "1.0.0",
+      "license": "UNLICENSED",
+      "repository": null,
+      "publisher": null
+    },
+    {
+      "name": "signal-exit",
+      "version": "3.0.7",
+      "license": "ISC",
+      "repository": "https://github.com/tapjs/signal-exit",
+      "publisher": "Ben Coe"
+    },
+    {
+      "name": "simple-plist",
+      "version": "1.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/wollardj/simple-plist",
+      "publisher": "Joe Wollard"
+    },
+    {
+      "name": "simple-swizzle",
+      "version": "0.2.4",
+      "license": "MIT",
+      "repository": "https://github.com/qix-/node-simple-swizzle",
+      "publisher": "Qix"
+    },
+    {
+      "name": "slash",
+      "version": "3.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/slash",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "slugify",
+      "version": "1.6.6",
+      "license": "MIT",
+      "repository": "https://github.com/simov/slugify",
+      "publisher": "Simeon Velichkov"
+    },
+    {
+      "name": "source-map",
+      "version": "0.5.7",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/mozilla/source-map",
+      "publisher": "Nick Fitzgerald"
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/7rulnik/source-map-js",
+      "publisher": "Valentin 7rulnik Semirulnik"
+    },
+    {
+      "name": "source-map-support",
+      "version": "0.5.21",
+      "license": "MIT",
+      "repository": "https://github.com/evanw/node-source-map-support",
+      "publisher": null
+    },
+    {
+      "name": "split-on-first",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/split-on-first",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "sprintf-js",
+      "version": "1.0.3",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/alexei/sprintf.js",
+      "publisher": "Alexandru Marasteanu"
+    },
+    {
+      "name": "stack-utils",
+      "version": "2.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/tapjs/stack-utils",
+      "publisher": "James Talmage"
+    },
+    {
+      "name": "stackframe",
+      "version": "1.3.4",
+      "license": "MIT",
+      "repository": "https://github.com/stacktracejs/stackframe",
+      "publisher": null
+    },
+    {
+      "name": "stacktrace-parser",
+      "version": "0.1.11",
+      "license": "MIT",
+      "repository": "https://github.com/errwischt/stacktrace-parser",
+      "publisher": "Georg Tavonius"
+    },
+    {
+      "name": "statuses",
+      "version": "1.5.0",
+      "license": "MIT",
+      "repository": "https://github.com/jshttp/statuses",
+      "publisher": null
+    },
+    {
+      "name": "stream-buffers",
+      "version": "2.2.0",
+      "license": "Unlicense",
+      "repository": "https://github.com/samcday/node-stream-buffer",
+      "publisher": "Sam Day"
+    },
+    {
+      "name": "strict-uri-encode",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/kevva/strict-uri-encode",
+      "publisher": "Kevin Mårtensson"
+    },
+    {
+      "name": "string-width",
+      "version": "4.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/string-width",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/strip-ansi",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "styleq",
+      "version": "0.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/necolas/styleq",
+      "publisher": "Nicolas Gallagher"
+    },
+    {
+      "name": "sucrase",
+      "version": "3.35.1",
+      "license": "MIT",
+      "repository": "https://github.com/alangpierce/sucrase",
+      "publisher": "Alan Pierce"
+    },
+    {
+      "name": "supports-color",
+      "version": "7.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/supports-color",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "supports-preserve-symlinks-flag",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/node-supports-preserve-symlinks-flag",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "temp-dir",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/temp-dir",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "terser",
+      "version": "5.46.0",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/terser/terser",
+      "publisher": "Mihai Bazon"
+    },
+    {
+      "name": "test-exclude",
+      "version": "6.0.0",
+      "license": "ISC",
+      "repository": "https://github.com/istanbuljs/test-exclude",
+      "publisher": "Ben Coe"
+    },
+    {
+      "name": "thenify",
+      "version": "3.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/thenables/thenify",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "thenify-all",
+      "version": "1.6.0",
+      "license": "MIT",
+      "repository": "https://github.com/thenables/thenify-all",
+      "publisher": "Jonathan Ong"
+    },
+    {
+      "name": "throat",
+      "version": "5.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/ForbesLindesay/throat",
+      "publisher": "ForbesLindesay"
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.15",
+      "license": "MIT",
+      "repository": "https://github.com/SuperchupuDev/tinyglobby",
+      "publisher": "Superchupu"
+    },
+    {
+      "name": "tmpl",
+      "version": "1.0.5",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/daaku/nodejs-tmpl",
+      "publisher": "Naitik Shah"
+    },
+    {
+      "name": "to-regex-range",
+      "version": "5.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/micromatch/to-regex-range",
+      "publisher": "Jon Schlinkert"
+    },
+    {
+      "name": "toidentifier",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/component/toidentifier",
+      "publisher": "Douglas Christopher Wilson"
+    },
+    {
+      "name": "tr46",
+      "version": "0.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/Sebmaster/tr46.js",
+      "publisher": "Sebastian Mayr"
+    },
+    {
+      "name": "ts-interface-checker",
+      "version": "0.1.13",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/gristlabs/ts-interface-checker",
+      "publisher": "Dmitry S, Grist Labs"
+    },
+    {
+      "name": "ts-object-utils",
+      "version": "0.0.5",
+      "license": "ISC",
+      "repository": "https://github.com/naqvitalha/ts-object-utils",
+      "publisher": "naqvitalha"
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "license": "0BSD",
+      "repository": "https://github.com/Microsoft/tslib",
+      "publisher": "Microsoft Corp."
+    },
+    {
+      "name": "type-detect",
+      "version": "4.0.8",
+      "license": "MIT",
+      "repository": "https://github.com/chaijs/type-detect",
+      "publisher": "Jake Luer"
+    },
+    {
+      "name": "type-fest",
+      "version": "0.7.1",
+      "license": "(MIT OR CC0-1.0)",
+      "repository": "https://github.com/sindresorhus/type-fest",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/microsoft/TypeScript",
+      "publisher": "Microsoft Corp."
+    },
+    {
+      "name": "ua-parser-js",
+      "version": "1.0.41",
+      "license": "MIT",
+      "repository": "https://github.com/faisalman/ua-parser-js",
+      "publisher": "Faisal Salman"
+    },
+    {
+      "name": "undici",
+      "version": "6.23.0",
+      "license": "MIT",
+      "repository": "https://github.com/nodejs/undici",
+      "publisher": null
+    },
+    {
+      "name": "undici-types",
+      "version": "7.16.0",
+      "license": "MIT",
+      "repository": "https://github.com/nodejs/undici",
+      "publisher": null
+    },
+    {
+      "name": "unicode-canonical-property-names-ecmascript",
+      "version": "2.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "unicode-match-property-ecmascript",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/unicode-match-property-ecmascript",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "2.2.1",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "unicode-property-aliases-ecmascript",
+      "version": "2.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/mathiasbynens/unicode-property-aliases-ecmascript",
+      "publisher": "Mathias Bynens"
+    },
+    {
+      "name": "unique-string",
+      "version": "2.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/unique-string",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "unpipe",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/stream-utils/unpipe",
+      "publisher": "Douglas Christopher Wilson"
+    },
+    {
+      "name": "update-browserslist-db",
+      "version": "1.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/browserslist/update-db",
+      "publisher": "Andrey Sitnik"
+    },
+    {
+      "name": "use-latest-callback",
+      "version": "0.2.6",
+      "license": "MIT",
+      "repository": "https://github.com/satya164/use-latest-callback",
+      "publisher": "Satyajit Sahoo"
+    },
+    {
+      "name": "use-sync-external-store",
+      "version": "1.6.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "publisher": null
+    },
+    {
+      "name": "util",
+      "version": "0.12.5",
+      "license": "MIT",
+      "repository": "https://github.com/browserify/node-util",
+      "publisher": "Joyent"
+    },
+    {
+      "name": "utils-merge",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/jaredhanson/utils-merge",
+      "publisher": "Jared Hanson"
+    },
+    {
+      "name": "uuid",
+      "version": "7.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/uuidjs/uuid",
+      "publisher": null
+    },
+    {
+      "name": "vaul",
+      "version": "1.1.2",
+      "license": "MIT",
+      "repository": "https://github.com/emilkowalski/vaul",
+      "publisher": "Emil Kowalski"
+    },
+    {
+      "name": "vlq",
+      "version": "1.0.1",
+      "license": "MIT",
+      "repository": "https://github.com/Rich-Harris/vlq",
+      "publisher": "Rich Harris"
+    },
+    {
+      "name": "void-elements",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/pugjs/void-elements",
+      "publisher": "hemanth.hm"
+    },
+    {
+      "name": "walker",
+      "version": "1.0.8",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/daaku/nodejs-walker",
+      "publisher": "Naitik Shah"
+    },
+    {
+      "name": "warn-once",
+      "version": "0.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/satya164/warn-once",
+      "publisher": "Satyajit Sahoo"
+    },
+    {
+      "name": "webidl-conversions",
+      "version": "3.0.1",
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/jsdom/webidl-conversions",
+      "publisher": "Domenic Denicola"
+    },
+    {
+      "name": "whatwg-fetch",
+      "version": "3.6.20",
+      "license": "MIT",
+      "repository": "https://github.com/github/fetch",
+      "publisher": null
+    },
+    {
+      "name": "whatwg-url",
+      "version": "5.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/jsdom/whatwg-url",
+      "publisher": "Sebastian Mayr"
+    },
+    {
+      "name": "whatwg-url-without-unicode",
+      "version": "8.0.0-3",
+      "license": "MIT",
+      "repository": "https://github.com/charpeni/whatwg-url",
+      "publisher": "Sebastian Mayr"
+    },
+    {
+      "name": "which",
+      "version": "2.0.2",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/node-which",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "which-typed-array",
+      "version": "1.1.20",
+      "license": "MIT",
+      "repository": "https://github.com/inspect-js/which-typed-array",
+      "publisher": "Jordan Harband"
+    },
+    {
+      "name": "wrap-ansi",
+      "version": "7.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/chalk/wrap-ansi",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "write-file-atomic",
+      "version": "4.0.2",
+      "license": "ISC",
+      "repository": "https://github.com/npm/write-file-atomic",
+      "publisher": "GitHub Inc."
+    },
+    {
+      "name": "ws",
+      "version": "7.5.10",
+      "license": "MIT",
+      "repository": "https://github.com/websockets/ws",
+      "publisher": "Einar Otto Stangvik"
+    },
+    {
+      "name": "xcode",
+      "version": "3.0.1",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/apache/cordova-node-xcode",
+      "publisher": "Apache Software Foundation"
+    },
+    {
+      "name": "xdate",
+      "version": "0.8.3",
+      "license": "(MIT OR GPL-2.0)",
+      "repository": "https://github.com/arshaw/xdate",
+      "publisher": "Adam Shaw"
+    },
+    {
+      "name": "xml2js",
+      "version": "0.6.0",
+      "license": "MIT",
+      "repository": "https://github.com/Leonidas-from-XIV/node-xml2js",
+      "publisher": "Marek Kubica"
+    },
+    {
+      "name": "xmlbuilder",
+      "version": "15.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/oozcitak/xmlbuilder-js",
+      "publisher": "Ozgur Ozcitak"
+    },
+    {
+      "name": "y18n",
+      "version": "5.0.8",
+      "license": "ISC",
+      "repository": "https://github.com/yargs/y18n",
+      "publisher": "Ben Coe"
+    },
+    {
+      "name": "yallist",
+      "version": "3.1.1",
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/yallist",
+      "publisher": "Isaac Z. Schlueter"
+    },
+    {
+      "name": "yaml",
+      "version": "2.8.2",
+      "license": "ISC",
+      "repository": "https://github.com/eemeli/yaml",
+      "publisher": "Eemeli Aro"
+    },
+    {
+      "name": "yargs",
+      "version": "17.7.2",
+      "license": "MIT",
+      "repository": "https://github.com/yargs/yargs",
+      "publisher": null
+    },
+    {
+      "name": "yargs-parser",
+      "version": "21.1.1",
+      "license": "ISC",
+      "repository": "https://github.com/yargs/yargs-parser",
+      "publisher": "Ben Coe"
+    },
+    {
+      "name": "yocto-queue",
+      "version": "0.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/yocto-queue",
+      "publisher": "Sindre Sorhus"
+    },
+    {
+      "name": "zustand",
+      "version": "5.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/pmndrs/zustand",
+      "publisher": "Paul Henschel"
+    }
+  ]
+}
