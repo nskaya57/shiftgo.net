@@ -28,42 +28,78 @@ export function VerifyClient() {
       const ctx = extractHandoffFromSearchParams(search);
       if (ctx) writeHandoffContext(ctx);
 
-      // Small delay to allow detectSessionInUrl to process the fragment.
-      await new Promise((resolve) => setTimeout(resolve, 400));
+      // Give detectSessionInUrl a beat to consume the implicit-flow fragment.
+      await new Promise((resolve) => setTimeout(resolve, 600));
       if (cancelled) return;
 
       const { data } = await supabase.auth.getSession();
-      if (!data.session) {
-        // Try legacy query-param token flow as fallback.
-        const tokenHash = search.get("token_hash");
-        const type = search.get("type");
-        if (tokenHash && (type === "email" || type === "signup")) {
-          const { data: verifyData, error } = await supabase.auth.verifyOtp({
-            token_hash: tokenHash,
-            type: "email",
-          });
-          if (error || !verifyData.session) {
-            if (cancelled) return;
-            setStage(
-              error?.message?.toLowerCase().includes("expired")
-                ? "expired"
-                : "failed"
-            );
-            return;
-          }
+
+      if (data.session) {
+        setStage("success");
+        setTimeout(
+          () => handoffToApp(data.session!, { fallbackToDefault: true }),
+          800
+        );
+        return;
+      }
+
+      // Fallbacks for templates that still use {{ .TokenHash }} or {{ .Code }}
+      // instead of Supabase's default {{ .ConfirmationURL }}.
+      const tokenHash = search.get("token_hash");
+      const type = search.get("type");
+      if (tokenHash && (type === "email" || type === "signup")) {
+        const { data: verifyData, error } = await supabase.auth.verifyOtp({
+          token_hash: tokenHash,
+          type: "email",
+        });
+        if (error || !verifyData.session) {
           if (cancelled) return;
-          setStage("success");
-          setTimeout(() => handoffToApp(verifyData.session!), 800);
+          setStage(
+            error?.message?.toLowerCase().includes("expired")
+              ? "expired"
+              : "failed"
+          );
           return;
         }
         if (cancelled) return;
+        setStage("success");
+        setTimeout(
+          () => handoffToApp(verifyData.session!, { fallbackToDefault: true }),
+          800
+        );
+        return;
+      }
+
+      const code = search.get("code");
+      if (code) {
+        const { data: exchangeData, error } =
+          await supabase.auth.exchangeCodeForSession(code);
+        if (error || !exchangeData.session) {
+          if (cancelled) return;
+          setStage(
+            error?.message?.toLowerCase().includes("expired")
+              ? "expired"
+              : "failed"
+          );
+          return;
+        }
+        if (cancelled) return;
+        setStage("success");
+        setTimeout(
+          () => handoffToApp(exchangeData.session!, { fallbackToDefault: true }),
+          800
+        );
+        return;
+      }
+
+      // Direct error params from Supabase (e.g. otp_expired).
+      const errorParam = search.get("error_code") || search.get("error");
+      if (errorParam?.toLowerCase().includes("expired")) {
         setStage("expired");
         return;
       }
 
-      if (cancelled) return;
-      setStage("success");
-      setTimeout(() => handoffToApp(data.session!), 800);
+      setStage(errorParam ? "failed" : "expired");
     }
 
     run();

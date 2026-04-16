@@ -15,7 +15,12 @@ export function getSupabaseBrowserClient() {
 
   return createBrowserClient(supabaseUrl, supabaseAnonKey, {
     auth: {
-      flowType: "pkce",
+      // Implicit (not PKCE) so email/magic-link confirmations work when the
+      // link is opened in a different browser context than signup (e.g. Gmail
+      // app → Safari). PKCE requires the code_verifier to live in the same
+      // browser storage — on mobile that's almost never the case for email
+      // flows. Tokens still travel via URL fragment (never in server logs).
+      flowType: "implicit",
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
