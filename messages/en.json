@@ -197,6 +197,11 @@
       "weakPassword": "This password is too weak. Try something longer.",
       "rateLimit": "Too many attempts. Please try again in a few minutes.",
       "network": "Connection problem. Please check your internet and retry.",
+      "captchaFailed": "CAPTCHA check failed. Please refresh and try again.",
+      "signupDisabled": "Sign-ups are temporarily disabled. Please try again later.",
+      "userNotFound": "No account found with that email.",
+      "userBanned": "This account has been suspended. Please contact support.",
+      "emailNotAuthorized": "This email isn't authorized to sign in.",
       "generic": "Something went wrong. Please try again."
     }
   }

@@ -28,6 +28,13 @@ const SUPABASE_ERROR_MAP: Record<string, string> = {
   over_email_send_rate_limit: "rateLimit",
   over_request_rate_limit: "rateLimit",
   rate_limit_exceeded: "rateLimit",
+  captcha_failed: "captchaFailed",
+  invalid_captcha: "captchaFailed",
+  signup_disabled: "signupDisabled",
+  user_not_found: "userNotFound",
+  user_banned: "userBanned",
+  email_exists: "userAlreadyRegistered",
+  email_address_not_authorized: "emailNotAuthorized",
 };
 
 export function mapSupabaseError(
@@ -36,10 +43,21 @@ export function mapSupabaseError(
 ): string {
   if (code && SUPABASE_ERROR_MAP[code]) return SUPABASE_ERROR_MAP[code];
   const haystack = `${code ?? ""} ${message ?? ""}`.toLowerCase();
-  if (haystack.includes("network") || haystack.includes("fetch")) return "network";
-  if (haystack.includes("rate limit")) return "rateLimit";
-  if (haystack.includes("invalid login")) return "invalidCredentials";
-  if (haystack.includes("email not confirmed")) return "emailNotConfirmed";
-  if (haystack.includes("already registered")) return "userAlreadyRegistered";
+  if (haystack.includes("captcha")) return "captchaFailed";
+  if (haystack.includes("network") || haystack.includes("fetch") || haystack.includes("failed to fetch"))
+    return "network";
+  if (haystack.includes("rate limit") || haystack.includes("too many"))
+    return "rateLimit";
+  if (haystack.includes("invalid login") || haystack.includes("invalid credentials"))
+    return "invalidCredentials";
+  if (haystack.includes("email not confirmed") || haystack.includes("not confirmed"))
+    return "emailNotConfirmed";
+  if (haystack.includes("already registered") || haystack.includes("already exists") || haystack.includes("email exists"))
+    return "userAlreadyRegistered";
+  if (haystack.includes("weak password") || haystack.includes("password too"))
+    return "weakPassword";
+  if (haystack.includes("user not found")) return "userNotFound";
+  if (haystack.includes("signup") && haystack.includes("disabled"))
+    return "signupDisabled";
   return "generic";
 }
