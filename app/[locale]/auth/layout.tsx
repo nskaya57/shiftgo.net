@@ -13,11 +13,18 @@ export const metadata = {
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* eslint-disable-next-line @next/next/no-head-element */}
+      {/* hCaptcha CDN warmup — widget loads faster on cold WebView mount */}
       <link rel="preconnect" href="https://hcaptcha.com" />
       <link rel="preconnect" href="https://newassets.hcaptcha.com" />
       <link rel="dns-prefetch" href="https://hcaptcha.com" />
       <link rel="dns-prefetch" href="https://newassets.hcaptcha.com" />
+
+      {/* Neighbour-page prefetch — WebView nav between signup/signin/forgot
+          comes from cache instead of a fresh request. */}
+      <link rel="prefetch" href="/auth/signup" as="document" />
+      <link rel="prefetch" href="/auth/signin" as="document" />
+      <link rel="prefetch" href="/auth/forgot" as="document" />
+
       <main className="min-h-[100dvh] bg-white px-5 pb-10 pt-6 text-[#17131f]">
         <div className="mx-auto w-full max-w-[440px]">{children}</div>
       </main>
