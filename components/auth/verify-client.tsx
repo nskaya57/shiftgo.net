@@ -52,10 +52,22 @@ export function VerifyClient() {
       // instead of Supabase's default {{ .ConfirmationURL }}.
       const tokenHash = search.get("token_hash");
       const type = search.get("type");
-      if (tokenHash && (type === "email" || type === "signup")) {
+      const EMAIL_OTP_TYPES = [
+        "email",
+        "signup",
+        "magiclink",
+        "recovery",
+        "invite",
+        "email_change",
+      ] as const;
+      type EmailOtpType = (typeof EMAIL_OTP_TYPES)[number];
+      const isEmailOtpType = (v: string | null): v is EmailOtpType =>
+        v !== null && (EMAIL_OTP_TYPES as readonly string[]).includes(v);
+
+      if (tokenHash && isEmailOtpType(type)) {
         const { data: verifyData, error } = await supabase.auth.verifyOtp({
           token_hash: tokenHash,
-          type: "email",
+          type,
         });
         if (error || !verifyData.session) {
           if (cancelled) return;
