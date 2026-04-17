@@ -1,31 +1,32 @@
 "use client";
 
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { forwardRef } from "react";
 import type { Ref } from "react";
 
-const SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 type Props = {
-  onVerify?: (token: string) => void;
+  onSuccess: (token: string) => void;
   onExpire?: () => void;
   onError?: () => void;
 };
 
 /**
- * Invisible hCaptcha. Widget never renders a checkbox; the form calls
- * `ref.current.execute({ async: true })` on submit to obtain a token.
- * Challenges only appear if hCaptcha's risk score is high.
+ * Cloudflare Turnstile, invisible size + managed dashboard mode. The
+ * widget auto-executes on mount and delivers a token via `onSuccess`.
+ * We call `ref.current?.reset()` after each use so the next submission
+ * gets a fresh token.
  */
 export const Captcha = forwardRef(function Captcha(
-  { onVerify, onExpire, onError }: Props,
-  ref: Ref<HCaptcha>,
+  { onSuccess, onExpire, onError }: Props,
+  ref: Ref<TurnstileInstance>,
 ) {
   if (!SITE_KEY) {
     if (process.env.NODE_ENV === "development") {
       return (
         <div className="rounded-[8px] border border-dashed border-[#e8e0f1] px-3 py-2 text-[12px] text-[#a49fb0]">
-          hCaptcha site key missing — set NEXT_PUBLIC_HCAPTCHA_SITE_KEY
+          Turnstile site key missing — set NEXT_PUBLIC_TURNSTILE_SITE_KEY
         </div>
       );
     }
@@ -33,12 +34,11 @@ export const Captcha = forwardRef(function Captcha(
   }
 
   return (
-    <HCaptcha
+    <Turnstile
       ref={ref}
-      sitekey={SITE_KEY}
-      size="invisible"
-      theme="light"
-      onVerify={(token) => onVerify?.(token)}
+      siteKey={SITE_KEY}
+      options={{ size: "invisible", theme: "light" }}
+      onSuccess={onSuccess}
       onExpire={onExpire}
       onError={onError}
     />
@@ -46,5 +46,5 @@ export const Captcha = forwardRef(function Captcha(
 });
 
 export function isCaptchaRequired(): boolean {
-  return Boolean(process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY);
+  return Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 }

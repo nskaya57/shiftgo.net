@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import type HCaptcha from "@hcaptcha/react-hcaptcha";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import { sanitizeRedirect } from "@/lib/auth/redirect";
 import { mapSupabaseError, validateEmail } from "@/lib/auth/validation";
@@ -20,7 +20,8 @@ export function ForgotPasswordForm() {
   const t = useTranslations("auth.forgot");
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
-  const captchaRef = useRef<HCaptcha>(null);
+  const captchaRef = useRef<TurnstileInstance>(null);
+  const captchaTokenRef = useRef<string | null>(null);
   const { redirectTo, state } = useAuthQueryForward();
 
   const [email, setEmail] = useState("");
@@ -46,15 +47,13 @@ export function ForgotPasswordForm() {
     }
   }
 
-  async function resolveCaptchaToken(): Promise<string | undefined> {
-    if (!isCaptchaRequired()) return undefined;
-    try {
-      const result = await captchaRef.current?.execute({ async: true });
-      captchaRef.current?.resetCaptcha();
-      return result?.response;
-    } catch {
-      return undefined;
+  async function waitForCaptchaToken(timeoutMs = 4000): Promise<string | null> {
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      if (captchaTokenRef.current) return captchaTokenRef.current;
+      await new Promise((r) => setTimeout(r, 100));
     }
+    return null;
   }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -71,11 +70,15 @@ export function ForgotPasswordForm() {
 
     setSubmitting(true);
     try {
-      const captchaToken = await resolveCaptchaToken();
-      if (isCaptchaRequired() && !captchaToken) {
-        setFormError(tErrors("captchaFailed"));
-        setSubmitting(false);
-        return;
+      let captchaToken: string | undefined;
+      if (isCaptchaRequired()) {
+        const token = await waitForCaptchaToken();
+        if (!token) {
+          setFormError(tErrors("captchaFailed"));
+          setSubmitting(false);
+          return;
+        }
+        captchaToken = token;
       }
 
       const trimmed = email.trim();
@@ -89,6 +92,9 @@ export function ForgotPasswordForm() {
         redirectTo: verifyUrl.toString(),
         captchaToken,
       });
+
+      captchaRef.current?.reset();
+      captchaTokenRef.current = null;
 
       if (error) {
         setFormError(tErrors(mapSupabaseError(error.code, error.message)));
@@ -119,7 +125,12 @@ export function ForgotPasswordForm() {
         required
       />
 
-      <Captcha ref={captchaRef} />
+      <Captcha
+        ref={captchaRef}
+        onSuccess={(token) => (captchaTokenRef.current = token)}
+        onExpire={() => (captchaTokenRef.current = null)}
+        onError={() => (captchaTokenRef.current = null)}
+      />
 
       <SubmitButton loading={submitting} loadingLabel={tShared("loading")}>
         {t("submit")}

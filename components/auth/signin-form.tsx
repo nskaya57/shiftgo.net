@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import type HCaptcha from "@hcaptcha/react-hcaptcha";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import {
   buildHandoffUrl,
@@ -26,7 +26,8 @@ export function SignInForm() {
   const tShared = useTranslations("auth.shared");
   const tErrors = useTranslations("auth.errors");
   const t = useTranslations("auth.signIn");
-  const captchaRef = useRef<HCaptcha>(null);
+  const captchaRef = useRef<TurnstileInstance>(null);
+  const captchaTokenRef = useRef<string | null>(null);
   const { redirectTo, state, queryToForward } = useAuthQueryForward();
 
   const [email, setEmail] = useState("");
@@ -35,15 +36,13 @@ export function SignInForm() {
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  async function resolveCaptchaToken(): Promise<string | undefined> {
-    if (!isCaptchaRequired()) return undefined;
-    try {
-      const result = await captchaRef.current?.execute({ async: true });
-      captchaRef.current?.resetCaptcha();
-      return result?.response;
-    } catch {
-      return undefined;
+  async function waitForCaptchaToken(timeoutMs = 4000): Promise<string | null> {
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      if (captchaTokenRef.current) return captchaTokenRef.current;
+      await new Promise((r) => setTimeout(r, 100));
     }
+    return null;
   }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -61,11 +60,15 @@ export function SignInForm() {
 
     setSubmitting(true);
     try {
-      const captchaToken = await resolveCaptchaToken();
-      if (isCaptchaRequired() && !captchaToken) {
-        setFormError(tErrors("captchaFailed"));
-        setSubmitting(false);
-        return;
+      let captchaToken: string | undefined;
+      if (isCaptchaRequired()) {
+        const token = await waitForCaptchaToken();
+        if (!token) {
+          setFormError(tErrors("captchaFailed"));
+          setSubmitting(false);
+          return;
+        }
+        captchaToken = token;
       }
 
       const supabase = getSupabaseBrowserClient();
@@ -74,6 +77,9 @@ export function SignInForm() {
         password,
         options: captchaToken ? { captchaToken } : undefined,
       });
+
+      captchaRef.current?.reset();
+      captchaTokenRef.current = null;
 
       if (error) {
         setFormError(tErrors(mapSupabaseError(error.code, error.message)));
@@ -137,7 +143,12 @@ export function SignInForm() {
         </a>
       </div>
 
-      <Captcha ref={captchaRef} />
+      <Captcha
+        ref={captchaRef}
+        onSuccess={(token) => (captchaTokenRef.current = token)}
+        onExpire={() => (captchaTokenRef.current = null)}
+        onError={() => (captchaTokenRef.current = null)}
+      />
 
       <SubmitButton loading={submitting} loadingLabel={tShared("loading")}>
         {t("submit")}

@@ -2,22 +2,14 @@ import type { ReactNode } from "react";
 
 export const metadata = {
   robots: { index: false, follow: false },
-  other: {
-    // Pre-connect to hCaptcha CDN so the invisible widget is ready by the
-    // time the form is submitted. Saves ~300-800ms cold-load on WebViews.
-    "preconnect-hcaptcha": "https://hcaptcha.com",
-    "preconnect-hcaptcha-assets": "https://newassets.hcaptcha.com",
-  },
 };
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* hCaptcha CDN warmup — widget loads faster on cold WebView mount */}
-      <link rel="preconnect" href="https://hcaptcha.com" />
-      <link rel="preconnect" href="https://newassets.hcaptcha.com" />
-      <link rel="dns-prefetch" href="https://hcaptcha.com" />
-      <link rel="dns-prefetch" href="https://newassets.hcaptcha.com" />
+      {/* Cloudflare Turnstile CDN warmup — widget loads faster on cold WebView mount */}
+      <link rel="preconnect" href="https://challenges.cloudflare.com" />
+      <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
 
       {/* Neighbour-page prefetch — WebView nav between signup/signin/forgot
           comes from cache instead of a fresh request. */}
