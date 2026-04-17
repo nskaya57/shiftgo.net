@@ -12,6 +12,24 @@ import { SuccessPanel } from "./success-panel";
 
 type Stage = "verifying" | "success" | "expired" | "failed";
 
+const EMAIL_OTP_TYPES = [
+  "email",
+  "signup",
+  "magiclink",
+  "recovery",
+  "invite",
+  "email_change",
+] as const;
+type EmailOtpType = (typeof EMAIL_OTP_TYPES)[number];
+
+function isEmailOtpType(v: string | null): v is EmailOtpType {
+  return v !== null && (EMAIL_OTP_TYPES as readonly string[]).includes(v);
+}
+
+function isExpiredMessage(msg?: string | null) {
+  return Boolean(msg && msg.toLowerCase().includes("expired"));
+}
+
 export function VerifyClient() {
   const t = useTranslations("auth.verify");
   const tShared = useTranslations("auth.shared");
@@ -22,101 +40,131 @@ export function VerifyClient() {
     let cancelled = false;
 
     async function run() {
-      // Store handoff context from query params so it's available after
-      // detectSessionInUrl consumes the fragment.
       const search = new URLSearchParams(window.location.search);
       const ctx = extractHandoffFromSearchParams(search);
       if (ctx) writeHandoffContext(ctx);
 
-      // `flow` marker tells the app whether this verification came from a
-      // signup-link (→ profile-setup) or recovery-link (→ reset-password).
       const flow = search.get("flow");
-      const extraQuery = flow ? { flow } : undefined;
+      const baseExtra: Record<string, string> = flow ? { flow } : {};
 
-      // Give detectSessionInUrl a beat to consume the implicit-flow fragment.
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      if (cancelled) return;
-
-      const { data } = await supabase.auth.getSession();
-
-      if (data.session) {
-        setStage("success");
-        setTimeout(
-          () => handoffToApp(data.session!, { fallbackToDefault: true, extraQuery }),
-          800
-        );
-        return;
+      // --- 1. Implicit-flow fragment (#access_token=...&refresh_token=...)
+      const hash = window.location.hash;
+      if (hash.length > 1) {
+        const hashParams = new URLSearchParams(hash.substring(1));
+        const fragErr =
+          hashParams.get("error_description") ?? hashParams.get("error");
+        if (fragErr) {
+          setStage(isExpiredMessage(fragErr) ? "expired" : "failed");
+          return;
+        }
+        const accessToken = hashParams.get("access_token");
+        const refreshToken = hashParams.get("refresh_token");
+        if (accessToken && refreshToken) {
+          const { data, error } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+          if (cancelled) return;
+          if (error || !data.session) {
+            setStage(isExpiredMessage(error?.message) ? "expired" : "failed");
+            return;
+          }
+          setStage("success");
+          const fragmentType = hashParams.get("type");
+          const extra = fragmentType
+            ? { ...baseExtra, type: fragmentType }
+            : baseExtra;
+          setTimeout(
+            () =>
+              handoffToApp(data.session!, {
+                fallbackToDefault: true,
+                extraQuery: Object.keys(extra).length ? extra : undefined,
+              }),
+            500,
+          );
+          return;
+        }
       }
 
-      // Fallbacks for templates that still use {{ .TokenHash }} or {{ .Code }}
-      // instead of Supabase's default {{ .ConfirmationURL }}.
+      // --- 2. Token hash in query params (older templates)
       const tokenHash = search.get("token_hash");
       const type = search.get("type");
-      const EMAIL_OTP_TYPES = [
-        "email",
-        "signup",
-        "magiclink",
-        "recovery",
-        "invite",
-        "email_change",
-      ] as const;
-      type EmailOtpType = (typeof EMAIL_OTP_TYPES)[number];
-      const isEmailOtpType = (v: string | null): v is EmailOtpType =>
-        v !== null && (EMAIL_OTP_TYPES as readonly string[]).includes(v);
-
       if (tokenHash && isEmailOtpType(type)) {
         const { data: verifyData, error } = await supabase.auth.verifyOtp({
           token_hash: tokenHash,
           type,
         });
+        if (cancelled) return;
         if (error || !verifyData.session) {
-          if (cancelled) return;
-          setStage(
-            error?.message?.toLowerCase().includes("expired")
-              ? "expired"
-              : "failed"
-          );
+          setStage(isExpiredMessage(error?.message) ? "expired" : "failed");
           return;
         }
-        if (cancelled) return;
         setStage("success");
+        const extra = { ...baseExtra, type } as Record<string, string>;
         setTimeout(
-          () => handoffToApp(verifyData.session!, { fallbackToDefault: true, extraQuery }),
-          800
+          () =>
+            handoffToApp(verifyData.session!, {
+              fallbackToDefault: true,
+              extraQuery: extra,
+            }),
+          500,
         );
         return;
       }
 
+      // --- 3. PKCE code
       const code = search.get("code");
       if (code) {
         const { data: exchangeData, error } =
           await supabase.auth.exchangeCodeForSession(code);
+        if (cancelled) return;
         if (error || !exchangeData.session) {
-          if (cancelled) return;
-          setStage(
-            error?.message?.toLowerCase().includes("expired")
-              ? "expired"
-              : "failed"
-          );
+          setStage(isExpiredMessage(error?.message) ? "expired" : "failed");
           return;
         }
-        if (cancelled) return;
         setStage("success");
         setTimeout(
-          () => handoffToApp(exchangeData.session!, { fallbackToDefault: true, extraQuery }),
-          800
+          () =>
+            handoffToApp(exchangeData.session!, {
+              fallbackToDefault: true,
+              extraQuery: Object.keys(baseExtra).length ? baseExtra : undefined,
+            }),
+          500,
         );
         return;
       }
 
-      // Direct error params from Supabase (e.g. otp_expired).
-      const errorParam = search.get("error_code") || search.get("error");
-      if (errorParam?.toLowerCase().includes("expired")) {
-        setStage("expired");
+      // --- 4. Last-chance fallback: maybe detectSessionInUrl already ran
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      if (cancelled) return;
+      const { data: sessionData } = await supabase.auth.getSession();
+      if (sessionData.session) {
+        setStage("success");
+        setTimeout(
+          () =>
+            handoffToApp(sessionData.session!, {
+              fallbackToDefault: true,
+              extraQuery: Object.keys(baseExtra).length ? baseExtra : undefined,
+            }),
+          500,
+        );
         return;
       }
 
-      setStage(errorParam ? "failed" : "expired");
+      // --- 5. Surface Supabase query-param errors
+      const errorParam = search.get("error_code") ?? search.get("error");
+      const errorDesc = search.get("error_description");
+      if (isExpiredMessage(errorParam) || isExpiredMessage(errorDesc)) {
+        setStage("expired");
+        return;
+      }
+      if (errorParam || errorDesc) {
+        setStage("failed");
+        return;
+      }
+
+      // Nothing matched — link was probably opened without tokens.
+      setStage("expired");
     }
 
     run();
