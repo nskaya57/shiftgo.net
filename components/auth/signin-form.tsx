@@ -64,7 +64,15 @@ export function SignInForm() {
       if (isCaptchaRequired()) {
         const token = await waitForCaptchaToken();
         if (!token) {
-          setFormError(tErrors("captchaFailed"));
+          const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "MISSING";
+          const keyPrefix = siteKey.substring(0, 8);
+          const lastErr =
+            typeof window !== "undefined"
+              ? (window.__turnstileLastError ?? "timeout")
+              : "timeout";
+          setFormError(
+            `Turnstile failed — siteKey:${keyPrefix}… cause:${lastErr}. Refresh and try again.`,
+          );
           setSubmitting(false);
           return;
         }

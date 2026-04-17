@@ -6,10 +6,18 @@ import type { Ref } from "react";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
+// Exposed on window for the forms to surface a user-visible diagnostic
+// when the widget fails silently inside the WebView.
+declare global {
+  interface Window {
+    __turnstileLastError?: string;
+  }
+}
+
 type Props = {
   onSuccess: (token: string) => void;
   onExpire?: () => void;
-  onError?: () => void;
+  onError?: (error?: string) => void;
 };
 
 /**
@@ -38,9 +46,20 @@ export const Captcha = forwardRef(function Captcha(
       ref={ref}
       siteKey={SITE_KEY}
       options={{ size: "invisible", theme: "light" }}
-      onSuccess={onSuccess}
+      onSuccess={(token) => {
+        if (typeof window !== "undefined") {
+          window.__turnstileLastError = undefined;
+        }
+        onSuccess(token);
+      }}
       onExpire={onExpire}
-      onError={onError}
+      onError={(err) => {
+        const code = typeof err === "string" ? err : "error";
+        if (typeof window !== "undefined") {
+          window.__turnstileLastError = code;
+        }
+        onError?.(code);
+      }}
     />
   );
 });
