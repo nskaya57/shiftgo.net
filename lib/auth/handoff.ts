@@ -29,7 +29,13 @@ export const DEFAULT_APP_REDIRECT = "shiftgoapp://auth/callback";
  */
 export function handoffToApp(
   session: Session,
-  { fallbackToDefault = false }: { fallbackToDefault?: boolean } = {}
+  {
+    fallbackToDefault = false,
+    extraQuery,
+  }: {
+    fallbackToDefault?: boolean;
+    extraQuery?: Record<string, string>;
+  } = {}
 ): HandoffResult {
   const ctx = readHandoffContext();
 
@@ -37,7 +43,16 @@ export function handoffToApp(
 
   const target = ctx ? sanitizeRedirect(ctx.redirectTo) : DEFAULT_APP_REDIRECT;
   const params = sessionToHandoffParams(session, ctx?.state ?? null);
-  const url = buildHandoffUrl(target, params);
+  let url = buildHandoffUrl(target, params);
+
+  if (extraQuery && Object.keys(extraQuery).length > 0) {
+    const qp = new URLSearchParams(extraQuery).toString();
+    const hashIdx = url.indexOf("#");
+    const base = hashIdx >= 0 ? url.slice(0, hashIdx) : url;
+    const hash = hashIdx >= 0 ? url.slice(hashIdx) : "";
+    const joiner = base.includes("?") ? "&" : "?";
+    url = `${base}${joiner}${qp}${hash}`;
+  }
 
   if (ctx) clearHandoffContext();
 

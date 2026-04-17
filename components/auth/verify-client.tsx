@@ -28,6 +28,11 @@ export function VerifyClient() {
       const ctx = extractHandoffFromSearchParams(search);
       if (ctx) writeHandoffContext(ctx);
 
+      // `flow` marker tells the app whether this verification came from a
+      // signup-link (→ profile-setup) or recovery-link (→ reset-password).
+      const flow = search.get("flow");
+      const extraQuery = flow ? { flow } : undefined;
+
       // Give detectSessionInUrl a beat to consume the implicit-flow fragment.
       await new Promise((resolve) => setTimeout(resolve, 600));
       if (cancelled) return;
@@ -37,7 +42,7 @@ export function VerifyClient() {
       if (data.session) {
         setStage("success");
         setTimeout(
-          () => handoffToApp(data.session!, { fallbackToDefault: true }),
+          () => handoffToApp(data.session!, { fallbackToDefault: true, extraQuery }),
           800
         );
         return;
@@ -64,7 +69,7 @@ export function VerifyClient() {
         if (cancelled) return;
         setStage("success");
         setTimeout(
-          () => handoffToApp(verifyData.session!, { fallbackToDefault: true }),
+          () => handoffToApp(verifyData.session!, { fallbackToDefault: true, extraQuery }),
           800
         );
         return;
@@ -86,7 +91,7 @@ export function VerifyClient() {
         if (cancelled) return;
         setStage("success");
         setTimeout(
-          () => handoffToApp(exchangeData.session!, { fallbackToDefault: true }),
+          () => handoffToApp(exchangeData.session!, { fallbackToDefault: true, extraQuery }),
           800
         );
         return;

@@ -4,9 +4,14 @@ import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import type HCaptcha from "@hcaptcha/react-hcaptcha";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
-import { sanitizeRedirect } from "@/lib/auth/redirect";
+import {
+  buildHandoffUrl,
+  sanitizeRedirect,
+  sessionToHandoffParams,
+} from "@/lib/auth/redirect";
 import { mapSupabaseError, validateEmail } from "@/lib/auth/validation";
 import { TextField } from "./text-field";
+import { PasswordField } from "./password-field";
 import { SubmitButton } from "./submit-button";
 import { ErrorBanner } from "./error-banner";
 import { Captcha, isCaptchaRequired } from "./captcha";
@@ -14,6 +19,7 @@ import { useAuthQueryForward } from "./use-query-forward";
 
 type FieldErrors = {
   email?: string;
+  password?: string;
   captcha?: string;
 };
 
@@ -22,62 +28,37 @@ export function SignInForm() {
   const tErrors = useTranslations("auth.errors");
   const t = useTranslations("auth.signIn");
   const captchaRef = useRef<HCaptcha>(null);
-  const { redirectTo, state, isAppEmbed } = useAuthQueryForward();
+  const { redirectTo, state, isAppEmbed, queryToForward } = useAuthQueryForward();
   const captchaNeeded = isCaptchaRequired() && !isAppEmbed;
 
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  function redirectBackToApp(trimmedEmail: string) {
-    const appRedirect = sanitizeRedirect(redirectTo);
-    try {
-      const pendingUrl = new URL(appRedirect);
-      pendingUrl.searchParams.set("signup_pending", "1");
-      pendingUrl.searchParams.set("email", trimmedEmail);
-      if (state) pendingUrl.searchParams.set("state", state);
-      window.location.href = pendingUrl.toString();
-    } catch {
-      const params = new URLSearchParams({
-        signup_pending: "1",
-        email: trimmedEmail,
-      });
-      if (state) params.set("state", state);
-      window.location.href = `${appRedirect}?${params.toString()}`;
-    }
-  }
-
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setFormError(null);
+    setFieldErrors({});
 
     const nextErrors: FieldErrors = {};
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
-    if (captchaNeeded && !captchaToken) {
-      nextErrors.captcha = "captchaRequired";
-    }
+    if (!password) nextErrors.password = "passwordRequired";
+    if (captchaNeeded && !captchaToken) nextErrors.captcha = "captchaRequired";
 
     setFieldErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
     setSubmitting(true);
     try {
-      const trimmed = email.trim();
       const supabase = getSupabaseBrowserClient();
-      const verifyRedirect = `${window.location.origin}/auth/verify`;
-      const appRedirect = sanitizeRedirect(redirectTo);
-      const emailRedirectTo = `${verifyRedirect}?redirect_to=${encodeURIComponent(appRedirect)}`;
-
-      const { error } = await supabase.auth.signInWithOtp({
-        email: trimmed,
-        options: {
-          emailRedirectTo,
-          shouldCreateUser: true,
-          captchaToken: captchaToken ?? undefined,
-        },
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password,
+        options: captchaToken ? { captchaToken } : undefined,
       });
 
       if (error) {
@@ -86,7 +67,19 @@ export function SignInForm() {
         setCaptchaToken(null);
         return;
       }
-      redirectBackToApp(trimmed);
+      if (!data.session) {
+        setFormError(tErrors("generic"));
+        return;
+      }
+
+      const target = sanitizeRedirect(redirectTo);
+      const handoffUrl = buildHandoffUrl(
+        target,
+        sessionToHandoffParams(data.session, state),
+      );
+      if (typeof window !== "undefined") {
+        window.location.href = handoffUrl;
+      }
     } catch (err) {
       console.error(err);
       setFormError(tErrors("network"));
@@ -110,6 +103,27 @@ export function SignInForm() {
         error={fieldErrors.email ? tErrors(fieldErrors.email) : null}
         required
       />
+
+      <PasswordField
+        label={tShared("password")}
+        name="password"
+        autoComplete="current-password"
+        showLabel={tShared("passwordShow")}
+        hideLabel={tShared("passwordHide")}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        error={fieldErrors.password ? tErrors(fieldErrors.password) : null}
+        required
+      />
+
+      <div className="flex justify-end">
+        <a
+          href={`/auth/forgot${queryToForward}`}
+          className="text-[13px] font-semibold text-[#341657] hover:underline"
+        >
+          {t("forgot")}
+        </a>
+      </div>
 
       {captchaNeeded ? (
         <div>

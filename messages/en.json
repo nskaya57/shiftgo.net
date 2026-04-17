@@ -105,8 +105,9 @@
     },
     "signIn": {
       "title": "Sign in to ShiftGo",
-      "subtitle": "Enter your email — we'll send you a sign-in link.",
-      "submit": "Send sign-in link",
+      "subtitle": "Welcome back.",
+      "submit": "Sign in",
+      "forgot": "Forgot password?",
       "noAccount": "Don't have an account?",
       "createAccount": "Create one"
     },
