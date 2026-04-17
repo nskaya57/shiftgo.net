@@ -20,7 +20,6 @@ import { useAuthQueryForward } from "./use-query-forward";
 type FieldErrors = {
   email?: string;
   password?: string;
-  captcha?: string;
 };
 
 export function SignInForm() {
@@ -28,15 +27,24 @@ export function SignInForm() {
   const tErrors = useTranslations("auth.errors");
   const t = useTranslations("auth.signIn");
   const captchaRef = useRef<HCaptcha>(null);
-  const { redirectTo, state, isAppEmbed, queryToForward } = useAuthQueryForward();
-  const captchaNeeded = isCaptchaRequired() && !isAppEmbed;
+  const { redirectTo, state, queryToForward } = useAuthQueryForward();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+
+  async function resolveCaptchaToken(): Promise<string | undefined> {
+    if (!isCaptchaRequired()) return undefined;
+    try {
+      const result = await captchaRef.current?.execute({ async: true });
+      captchaRef.current?.resetCaptcha();
+      return result?.response;
+    } catch {
+      return undefined;
+    }
+  }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,13 +55,19 @@ export function SignInForm() {
     const emailResult = validateEmail(email);
     if (!emailResult.ok) nextErrors.email = emailResult.error;
     if (!password) nextErrors.password = "passwordRequired";
-    if (captchaNeeded && !captchaToken) nextErrors.captcha = "captchaRequired";
 
     setFieldErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
     setSubmitting(true);
     try {
+      const captchaToken = await resolveCaptchaToken();
+      if (isCaptchaRequired() && !captchaToken) {
+        setFormError(tErrors("captchaFailed"));
+        setSubmitting(false);
+        return;
+      }
+
       const supabase = getSupabaseBrowserClient();
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim(),
@@ -63,8 +77,6 @@ export function SignInForm() {
 
       if (error) {
         setFormError(tErrors(mapSupabaseError(error.code, error.message)));
-        captchaRef.current?.resetCaptcha();
-        setCaptchaToken(null);
         return;
       }
       if (!data.session) {
@@ -125,24 +137,7 @@ export function SignInForm() {
         </a>
       </div>
 
-      {captchaNeeded ? (
-        <div>
-          <Captcha
-            ref={captchaRef}
-            onVerify={(token) => {
-              setCaptchaToken(token);
-              setFieldErrors((prev) => ({ ...prev, captcha: undefined }));
-            }}
-            onExpire={() => setCaptchaToken(null)}
-            onError={() => setCaptchaToken(null)}
-          />
-          {fieldErrors.captcha ? (
-            <p className="mt-2 text-center text-[13px] font-medium text-[#ef4444]">
-              {tErrors(fieldErrors.captcha)}
-            </p>
-          ) : null}
-        </div>
-      ) : null}
+      <Captcha ref={captchaRef} />
 
       <SubmitButton loading={submitting} loadingLabel={tShared("loading")}>
         {t("submit")}

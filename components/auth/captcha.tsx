@@ -7,14 +7,19 @@ import type { Ref } from "react";
 const SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
 
 type Props = {
-  onVerify: (token: string) => void;
+  onVerify?: (token: string) => void;
   onExpire?: () => void;
   onError?: () => void;
 };
 
+/**
+ * Invisible hCaptcha. Widget never renders a checkbox; the form calls
+ * `ref.current.execute({ async: true })` on submit to obtain a token.
+ * Challenges only appear if hCaptcha's risk score is high.
+ */
 export const Captcha = forwardRef(function Captcha(
   { onVerify, onExpire, onError }: Props,
-  ref: Ref<HCaptcha>
+  ref: Ref<HCaptcha>,
 ) {
   if (!SITE_KEY) {
     if (process.env.NODE_ENV === "development") {
@@ -28,16 +33,15 @@ export const Captcha = forwardRef(function Captcha(
   }
 
   return (
-    <div className="flex justify-center">
-      <HCaptcha
-        ref={ref}
-        sitekey={SITE_KEY}
-        onVerify={onVerify}
-        onExpire={onExpire}
-        onError={onError}
-        theme="light"
-      />
-    </div>
+    <HCaptcha
+      ref={ref}
+      sitekey={SITE_KEY}
+      size="invisible"
+      theme="light"
+      onVerify={(token) => onVerify?.(token)}
+      onExpire={onExpire}
+      onError={onError}
+    />
   );
 });
 
