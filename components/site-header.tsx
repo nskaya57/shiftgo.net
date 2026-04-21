@@ -44,7 +44,7 @@ export function SiteHeader() {
 
           <a
             href="/#download"
-            className="inline-flex items-center rounded-full bg-[#341657] px-5 py-2.5 text-[14px] font-semibold text-white transition-all hover:bg-[#5a2d82] hover:shadow-[0_6px_18px_-4px_#24143a33] md:px-6 md:py-3 md:text-[15px]"
+            className="hidden items-center rounded-full bg-[#341657] px-5 py-2.5 text-[14px] font-semibold text-white transition-all hover:bg-[#5a2d82] hover:shadow-[0_6px_18px_-4px_#24143a33] md:inline-flex md:px-6 md:py-3 md:text-[15px]"
           >
             {t("getApp")}
           </a>
