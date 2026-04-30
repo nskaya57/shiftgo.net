@@ -32,7 +32,7 @@ export async function GET() {
     applinks: {
       details: [
         {
-          appIDs: [`${teamId}.com.eneskaya57.ShiftGo`],
+          appIDs: [`${teamId}.net.shiftgo.app`],
           components: [
             {
               "/": "/open/shift/*",
