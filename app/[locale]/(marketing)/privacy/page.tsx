@@ -18,7 +18,7 @@ export default async function PrivacyPage({
   return (
     <PolicyPage title="Privacy policy">
       <p className="text-[14px] uppercase tracking-[0.12em] text-[#a49fb0]">
-        Last updated 16 April 2026
+        Last updated 6 May 2026
       </p>
 
       <p>
@@ -90,6 +90,100 @@ export default async function PrivacyPage({
         engineers can&apos;t read your data on the server.
       </p>
 
+      <h2 className="pt-8 text-[22px] font-bold text-[#17131f]">Calendar integrations</h2>
+
+      <p>
+        ShiftGo Premium can connect to your Google Calendar and (on iOS) your
+        iCloud Calendar so your work shifts and personal commitments live in
+        one place. Both integrations are <strong className="text-[#17131f]">opt-in</strong> —
+        you choose to connect them from <em>Settings → Calendar Filter →
+        Sync</em>, and you can disconnect at any time.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Google Calendar</h3>
+      <p>
+        When you connect Google Calendar, ShiftGo requests the{" "}
+        <code className="rounded bg-[#f4f1f8] px-1.5 py-0.5 text-[14px] text-[#341657]">
+          https://www.googleapis.com/auth/calendar
+        </code>{" "}
+        OAuth scope. Here is exactly what we do with that access:
+      </p>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          <strong className="text-[#17131f]">Read</strong> the list of calendars in your Google account so you can choose which ones to overlay onto the ShiftGo grid.
+        </li>
+        <li>
+          <strong className="text-[#17131f]">Read</strong> events from the calendars you chose, so they appear alongside your shifts. Holiday and birthday calendars are filtered out client-side.
+        </li>
+        <li>
+          <strong className="text-[#17131f]">Write</strong> ShiftGo shifts and reminders to a single dedicated calendar named &ldquo;ShiftGo&rdquo; that we create inside your account on first sync. We never modify, delete, or read events from your other calendars.
+        </li>
+      </ul>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Apple Calendar (iCloud)</h3>
+      <p>
+        On iOS, you can connect your device&apos;s Calendar permission. ShiftGo
+        reads events from the calendars you select and writes ShiftGo shifts to
+        a dedicated &ldquo;ShiftGo&rdquo; calendar on your device. iCloud roams
+        the dedicated calendar across your Apple devices via your iCloud
+        account; Apple, not ShiftGo, controls that sync.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Where calendar data is stored</h3>
+      <p>
+        Calendar events read from Google or iCloud stay on your device. They
+        are <strong className="text-[#17131f]">not transmitted to ShiftGo&apos;s
+        servers</strong>, not included in Cloud Sync, not used for analytics,
+        and not used to train any model. They are kept in app memory and the
+        local database only for as long as the integration is connected.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Disconnecting and revoking access</h3>
+      <p>
+        You can disconnect either integration at any time from{" "}
+        <em>Settings → Calendar Filter → Sync</em>. Disconnecting Google
+        Calendar calls Google&apos;s server-side <code className="rounded bg-[#f4f1f8] px-1.5 py-0.5 text-[14px] text-[#341657]">revokeAccess</code>{" "}
+        endpoint, which removes ShiftGo from your Google Account permissions
+        list; deleting your ShiftGo account does the same. You can also revoke
+        the grant directly at{" "}
+        <a
+          href="https://myaccount.google.com/permissions"
+          className="font-semibold text-[#341657] underline decoration-[#e8e0f1] underline-offset-2 hover:decoration-[#341657]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          myaccount.google.com/permissions
+        </a>
+        . The dedicated &ldquo;ShiftGo&rdquo; calendar that ShiftGo created
+        stays in your account after disconnect so you don&apos;t lose the
+        history; you can delete it manually from Google Calendar / Apple
+        Calendar if you want it gone.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Google API Services User Data Policy</h3>
+      <p>
+        ShiftGo&apos;s use of information received from Google APIs adheres to
+        the{" "}
+        <a
+          href="https://developers.google.com/terms/api-services-user-data-policy"
+          className="font-semibold text-[#341657] underline decoration-[#e8e0f1] underline-offset-2 hover:decoration-[#341657]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google API Services User Data Policy
+        </a>
+        , including the{" "}
+        <strong className="text-[#17131f]">Limited Use</strong> requirements.
+        We do not transfer Google user data to third parties except to provide
+        or improve user-facing features, and we do not use Google user data
+        for serving advertisements or to train generalized AI / machine
+        learning models. Humans do not read Google user data unless we have
+        your explicit consent for a specific incident, it is required for
+        security purposes (such as investigating abuse), to comply with
+        applicable law, or the data is aggregated and anonymized for internal
+        operations.
+      </p>
+
       <h2 className="pt-8 text-[22px] font-bold text-[#17131f]">Third parties</h2>
 
       <p>We use a small number of trusted services to run ShiftGo:</p>
@@ -102,6 +196,12 @@ export default async function PrivacyPage({
         </li>
         <li>
           <strong className="text-[#17131f]">Apple / Google Sign-In</strong>: optional authentication. Used only to verify your identity when you sign in.
+        </li>
+        <li>
+          <strong className="text-[#17131f]">Google Calendar API</strong>: optional integration (Premium). Reads your Google Calendar list and events into the app for unified scheduling, and writes ShiftGo shifts to a dedicated &ldquo;ShiftGo&rdquo; calendar in your Google account. See the &ldquo;Calendar integrations&rdquo; section below for the full data flow.
+        </li>
+        <li>
+          <strong className="text-[#17131f]">Apple Calendar (iCloud)</strong>: optional integration (Premium, iOS). Reads your iCloud calendars into the app and writes ShiftGo shifts to a dedicated &ldquo;ShiftGo&rdquo; calendar on your device.
         </li>
       </ul>
 
