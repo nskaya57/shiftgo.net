@@ -24,21 +24,31 @@ import { NextResponse } from "next/server";
  */
 export const dynamic = "force-static";
 
-export async function GET() {
-  const teamId = process.env.APPLE_TEAM_ID;
-  if (!teamId) {
-    // Fail loudly in build/dev so we don't ship an AASA payload missing
-    // the team prefix (which would 200 OK but never link an app).
-    throw new Error(
-      "APPLE_TEAM_ID env var is missing — required to build the AASA payload",
-    );
-  }
+// Apple Team ID + ShiftGo iOS bundle id, hardcoded.
+//
+// Earlier shape templated `${process.env.APPLE_TEAM_ID}.net.shiftgo.app`
+// at build time — production traffic surfaced an AASA payload with no
+// resolvable Team prefix (likely an absent/blank Vercel env value
+// silently producing a "undefined.net.shiftgo.app" entry rather than
+// firing the build guard, since `force-static` was pre-rendered in an
+// earlier deploy where the env was set). Universal Links can't bind
+// to that, and the Phase C.8 share-token deep link smoke chain breaks
+// end-to-end.
+//
+// Both values are stable for v1: the Team ID belongs to the personal
+// Apple Developer enrollment (Enes KAYA, individual), and the bundle
+// id is locked to `net.shiftgo.app` across the build pipeline (see
+// `eas.json` → submit.production.appleTeamId, app.json →
+// ios.bundleIdentifier). A future change to either is a deliberate
+// release-engineering decision that warrants its own commit.
+const APPLE_APP_ID = "4PSK9UZA65.net.shiftgo.app";
 
+export async function GET() {
   const payload = {
     applinks: {
       details: [
         {
-          appIDs: [`${teamId}.net.shiftgo.app`],
+          appIDs: [APPLE_APP_ID],
           components: [
             {
               "/": "/open/shift/*",
