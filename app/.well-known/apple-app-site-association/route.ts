@@ -7,8 +7,14 @@ import { NextResponse } from "next/server";
  * iOS fetches this file once after a fresh install / domain association
  * change and caches it on-device. The `applinks` payload pairs the
  * Apple Developer Team ID with the ShiftGo bundle id so taps on
- * `https://shiftgo.net/open/shift/{id}` and `/open/reminder/{id}` open
- * the app directly instead of falling through to the browser.
+ *  - `https://shiftgo.net/open/shift/{id}` and `/open/reminder/{id}`
+ *    open the entity directly in the app (push-notification + Apple
+ *    Calendar mirror "Open" button surfaces).
+ *  - `https://shiftgo.net/share/{token}` opens the in-app subscribe
+ *    flow when an owner shares their calendar (Phase C.8).
+ * In every case the OS intercepts the link via Associated Domains
+ * before the browser sees it; the matching marketing pages only
+ * render for users without the app installed.
  *
  * Content-Type **must** be `application/json` and the response **must
  * not** be served from a redirect — Apple rejects either case silently
@@ -41,6 +47,10 @@ export async function GET() {
             {
               "/": "/open/reminder/*",
               comment: "Open a reminder directly in ShiftGo",
+            },
+            {
+              "/": "/share/*",
+              comment: "Subscribe to a shared ShiftGo calendar",
             },
           ],
         },
