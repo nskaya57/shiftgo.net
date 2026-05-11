@@ -18,7 +18,7 @@ export default async function PrivacyPage({
   return (
     <PolicyPage title="Privacy policy">
       <p className="text-[14px] uppercase tracking-[0.12em] text-[#a49fb0]">
-        Last updated 6 May 2026
+        Last updated 11 May 2026
       </p>
 
       <p>
@@ -88,6 +88,112 @@ export default async function PrivacyPage({
         encryption key is derived from your account credentials and never
         leaves your phone. We store only the encrypted blob — even ShiftGo
         engineers can&apos;t read your data on the server.
+      </p>
+
+      <h2 className="pt-8 text-[22px] font-bold text-[#17131f]">Security &amp; data protection</h2>
+
+      <p>
+        We treat your shifts, earnings, account email, calendar tokens, and any
+        events fetched from Google Calendar or iCloud as{" "}
+        <strong className="text-[#17131f]">sensitive data</strong>. The
+        following controls apply across the app, our cloud backend, and the
+        Google Calendar integration:
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Encryption in transit</h3>
+      <p>
+        All traffic between the ShiftGo app, our Supabase backend, our edge
+        functions, and the Google Calendar API is encrypted with{" "}
+        <strong className="text-[#17131f]">TLS 1.2 or higher</strong>. Plain-HTTP
+        endpoints are not used. Certificate validation is enforced by the
+        platform (iOS App Transport Security; Android Network Security Config).
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Encryption at rest</h3>
+      <p>
+        Cloud Sync payloads are <strong className="text-[#17131f]">end-to-end
+        encrypted on the device</strong> before upload (AES-256-GCM); the
+        encryption key is derived from your account credentials and never
+        leaves your phone. The encrypted blobs are then stored on Supabase
+        infrastructure, which adds its own AES-256 encryption at rest on the
+        underlying disks and managed Postgres. We hold no plaintext copy of
+        your shift or earnings data.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Sensitive credentials on device</h3>
+      <p>
+        Google Calendar OAuth access tokens and refresh tokens are stored
+        through the platform&apos;s secure credential store —{" "}
+        <strong className="text-[#17131f]">iOS Keychain</strong> on iOS and{" "}
+        <strong className="text-[#17131f]">Android Keystore</strong> (hardware-
+        backed where available) on Android — via the{" "}
+        <code className="rounded bg-[#f4f1f8] px-1.5 py-0.5 text-[14px] text-[#341657]">
+          expo-secure-store
+        </code>{" "}
+        module. Tokens are never written to plain preferences, log files, or
+        synced storage. When you disconnect Google Calendar or delete your
+        ShiftGo account, the tokens are erased locally and revoked server-side
+        with Google.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Access controls</h3>
+      <p>
+        Our Postgres database enforces{" "}
+        <strong className="text-[#17131f]">row-level security (RLS)</strong>:
+        every read and write is automatically scoped to the authenticated
+        user&apos;s ID, so one account cannot see or modify another
+        account&apos;s rows even if a query were crafted to attempt it.
+        Privileged operations (account deletion, push-token registration) run
+        through audited edge functions, never with broad service-role keys
+        embedded in the client.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Authentication</h3>
+      <p>
+        Sign-in uses passwordless email one-time codes, Sign in with Apple, or
+        Sign in with Google. ShiftGo does not store or transmit user passwords.
+        Session tokens are managed by Supabase Auth and refreshed
+        automatically; you can sign out at any time from{" "}
+        <em>Settings → Account</em>.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Personnel access</h3>
+      <p>
+        ShiftGo is operated by a small team. Engineer access to the production
+        database is logged and limited to the minimum needed for service
+        reliability and abuse investigation. Engineers cannot read your
+        Cloud-Synced shifts or earnings (they are end-to-end encrypted), and
+        do not read your Google Calendar data — that data is stored only on
+        your device.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Retention &amp; deletion</h3>
+      <p>
+        When you delete your account from{" "}
+        <em>Settings → Account → Delete account</em>, all server-side data tied
+        to your account (Cloud Sync blobs, push-token registration, account
+        email, calendar share links) is{" "}
+        <strong className="text-[#17131f]">permanently erased within 30 days</strong>;
+        most rows are removed immediately by cascade. Anonymous crash reports
+        collected by Apple or Google&apos;s standard developer tools follow
+        their respective retention policies and contain no shift, earnings,
+        or calendar content.
+      </p>
+
+      <h3 className="pt-4 text-[17px] font-semibold text-[#17131f]">Breach notification</h3>
+      <p>
+        In the unlikely event of a security incident that affects user data,
+        we will notify affected users by email{" "}
+        <strong className="text-[#17131f]">within 72 hours</strong> of
+        confirming the scope, in line with GDPR Article 33 obligations.
+        Researchers can report vulnerabilities to{" "}
+        <a
+          href="mailto:support@shiftgo.net"
+          className="font-semibold text-[#341657] underline decoration-[#e8e0f1] underline-offset-2 hover:decoration-[#341657]"
+        >
+          support@shiftgo.net
+        </a>{" "}
+        and we will acknowledge within two business days.
       </p>
 
       <h2 className="pt-8 text-[22px] font-bold text-[#17131f]">Calendar integrations</h2>
