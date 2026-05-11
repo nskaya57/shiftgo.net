@@ -29,3 +29,8 @@ next-env.d.ts
 
 # Claude workspace metadata
 .claude/
+
+# Native iOS build artefacts that occasionally land in the web repo
+# (shiftgo.net hosts marketing + AASA + privacy, not the iOS app)
+*.ipa
+*.bin
