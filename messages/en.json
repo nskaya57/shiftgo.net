@@ -11,9 +11,7 @@
   },
   "stores": {
     "appStoreAria": "Download on the App Store",
-    "appStoreAlt": "App Store",
-    "playStoreAria": "Get it on Google Play",
-    "playStoreAlt": "Google Play"
+    "appStoreAlt": "App Store"
   },
   "hero": {
     "eyebrow": "Built for hourly workers",

@@ -38,7 +38,7 @@ export function Hero() {
             </p>
 
             <div className="mt-8">
-              <StoreBadges size="large" priority hidePlay />
+              <StoreBadges size="large" priority />
             </div>
 
           </div>

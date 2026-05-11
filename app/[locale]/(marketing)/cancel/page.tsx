@@ -98,19 +98,6 @@ export default async function CancelPage({
         </li>
       </ol>
 
-      <p className="text-[14px] text-[#a49fb0]">
-        You can also manage your subscription at{" "}
-        <a
-          href="https://play.google.com/store/account/subscriptions"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold text-[#341657] underline decoration-[#e8e0f1] underline-offset-2 hover:decoration-[#341657]"
-        >
-          play.google.com/store/account/subscriptions
-        </a>
-        .
-      </p>
-
       <h2 className="pt-8 text-[22px] font-bold text-[#17131f]">
         What happens after I cancel?
       </h2>
