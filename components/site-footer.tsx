@@ -27,7 +27,7 @@ export function SiteFooter() {
               {t("tagline")}
             </p>
             <div className="mt-6">
-              <StoreBadges />
+              <StoreBadges hidePlay />
             </div>
           </div>
 
