@@ -6,7 +6,8 @@
         "appIDs": ["4PSK9UZA65.net.shiftgo.app"],
         "components": [
           { "/": "/open/shift/*", "comment": "Open a shift directly in ShiftGo" },
-          { "/": "/open/reminder/*", "comment": "Open a reminder directly in ShiftGo" }
+          { "/": "/open/reminder/*", "comment": "Open a reminder directly in ShiftGo" },
+          { "/": "/share/*", "comment": "Open a shared calendar invite directly in ShiftGo" }
         ]
       }
     ]
