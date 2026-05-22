@@ -14,6 +14,8 @@ const pages: Page[] = [
   { path: "/cancel", changeFrequency: "yearly", priority: 0.3 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/subscription-terms", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/account-deletion", changeFrequency: "yearly", priority: 0.3 },
   { path: "/imprint", changeFrequency: "yearly", priority: 0.2 },
 ];
 
